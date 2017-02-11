@@ -8,8 +8,11 @@
 
 typedef struct	s_var
 {
+    //char parameter;
    // char flags;
     //char width;
+  //  int precision;
+//    int length;
     char type;
 } t_var;
 

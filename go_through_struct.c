@@ -3,8 +3,11 @@
 //
 #include "ft_printf.h"
 
+/*This func obtain every node to the account function*/
 void go_through_struct(t_var stc, void *arg)
 {
+    /*1. Check parameters
+     *etc*/
     long i =  &arg;
     if(stc.type == 's')
         ft_putstr(arg);
