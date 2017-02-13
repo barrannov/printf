@@ -2,7 +2,7 @@
 //
 // Created by aleksandr on 08.02.17.
 //
-#include <stdarg.h>
+#include "ft_printf.h"
 
 
 int ft_printf(char *str, ...)
@@ -14,6 +14,7 @@ int ft_printf(char *str, ...)
 
     i = 0;
     while (str[i]) {
+        free_struct(&all);
         if (str[i] == '%')
         {
             all = create_struct(&i,str);
@@ -30,8 +31,15 @@ int ft_printf(char *str, ...)
 
 
 int main() {
-    char a[3] = "sd";
-    ft_printf("%p%d", a, 1);
-    printf("\n%o%d", 100, a);
+    t_var aa;
+
+   /* aa.type = 'w';
+    printf("%c\n", aa.type);
+    if(aa.type)
+    printf("%c\n", aa.type);
+   */
+     char a[3] = "sd";
+   ft_printf("%s%i", a, 1);
+   // printf("\n%o%d", 100, a);
     return 0;
 }
