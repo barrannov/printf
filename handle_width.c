@@ -3,7 +3,7 @@
 //
 
 
-int check_width(char c)
+int is_digit(char c)
 {
 	if (c > 48 && c < 58)
 		return (1);

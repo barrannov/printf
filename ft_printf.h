@@ -24,6 +24,6 @@ void free_struct(t_var *strc);
 void handle_type(char type, void *arg);
 int check_type(char c);
 int check_flag(char c);
-int check_width(char c);
+int is_digit(char c);
 
 t_var create_flags(char *str, int *i, t_var all);
