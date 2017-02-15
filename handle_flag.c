@@ -23,7 +23,7 @@ t_var create_flags(char *str, int *i, t_var all)
 {
 
 
-	if(str[*i] == '0')
+	if(str[*i] == '0' && !check_width(str[*i - 1]))
 		all.null = '0';
 	if(str[*i] == '#')
 		all.hash = '#';
@@ -31,6 +31,5 @@ t_var create_flags(char *str, int *i, t_var all)
 		all.min = '-';
 	if(str[*i] == ' ')
 		all.space = ' ';
-	(*i)++;
 	return (all);
 }

@@ -27,9 +27,9 @@ int create_numbers(char *str, int *i)
 }
 
 
-int check_precision(char c)
+int check_precision(char c, char b)
 {
-	if (c == '.')
+	if (c == '.' && check_width(b))
 		return (1);
 	return (0);
 }
@@ -81,7 +81,7 @@ t_var create_struct(int *i, char *str, t_var all)
 		//	(*i)++;
 //		return  create_struct(i, str, all);
 	}
-	if (check_precision(str[*i]))
+	if (check_precision(str[*i], str[*i + 1]))
 	{
 		(*i)++;
 		temp = create_numbers(str, i);

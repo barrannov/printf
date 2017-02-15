@@ -28,7 +28,7 @@ int ft_printf(char *str, ...)
 			printf("  hash: %c", all.hash);
 			printf("  null: %c", all.null);
 			printf("  min: %c", all.min);
-			printf("  space: %c", all.space);
+			printf("  space:{%c}", all.space);
 			printf("  width: %d", all.width);
 			printf("  precision: %d", all.precision);
 			printf("  type: %c", all.type);
@@ -55,7 +55,7 @@ int main()
 	 printf("%c\n", aa.type);
 	*/
 	char a[3] = "sd";
-	ft_printf("%#20.12..-......#...66..1d ", 5);
+	ft_printf("%#.2#01.12..-.....#######..66..1....9d %s", 5, a);
 	// printf("\n%-#d", 5);
 
 	// printf("\n{%0d}", 12);
