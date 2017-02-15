@@ -62,7 +62,7 @@ t_var create_struct(int *i, char *str, t_var all)
 /*This function adds all specification to structure*/
 	//t_var all;
 
-int temp;
+	int temp;
 	// if(str[(*i)] == '%')
 	//   (*i)++;
 	//  while (str[(*i)]) {
@@ -71,22 +71,21 @@ int temp;
 	{
 		all.flags = create_flags(str, i);
 		// return (all);
-	//	printf("  flags: %s", all.flags);
+		//	printf("  flags: %s", all.flags);
 		(*i)++;
 		return 	create_struct(i, str, all);
 	}
 	if (check_width(str[*i]))
 	{
 		all.width = create_numbers(str, i);
-	//	printf("  width: %d", all.width);
+		//	printf("  width: %d", all.width);
 		(*i)++;
 		return  create_struct(i, str, all);
 	}
 	if(check_precision(str[*i]))
 	{
 		(*i)++;
-			temp = 	create_numbers(str, i);
-		if(temp > 0)
+		temp = 	create_numbers(str, i);
 			all.precision = temp;
 		//printf("   precision: %d", all.precision);
 		(*i)++;
@@ -101,7 +100,7 @@ int temp;
 	if (check_type(str[*i]))
 	{
 		all.type = str[(*i)];
-	//	printf("    type: %c", all.type);
+		//	printf("    type: %c", all.type);
 		// return (all);
 		//(*i)++;
 	}
