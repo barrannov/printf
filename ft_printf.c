@@ -25,9 +25,12 @@ int ft_printf(char *str, ...)
 		{
 			i++;
 			all = create_struct(&i, str, all);
-			printf("  precision: %d", all.precision);
-			printf("  flags: %s", all.flags);
+			printf("  flags: %c", all.hash);
+			printf("  flags: %c", all.null);
+			printf("  flags: %c", all.min);
 			printf("  width: %d", all.width);
+			printf("  precision: %d", all.precision);
+			printf("  type: %c", all.type);
 			go_through_struct(all, va_arg(myl, char *));
 		}
 		else
@@ -51,7 +54,7 @@ int main()
 	 printf("%c\n", aa.type);
 	*/
 	char a[3] = "sd";
-	ft_printf("%#20.12........#...66..13........0.5d %d", 5);
+	ft_printf("%#20.12........#...66..13.....-...0.5d %d", 5);
 	// printf("\n%-#d", 5);
 
 	// printf("\n{%0d}", 12);

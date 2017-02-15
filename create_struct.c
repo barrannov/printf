@@ -69,7 +69,7 @@ t_var create_struct(int *i, char *str, t_var all)
 	temp = 0;
 	if (check_flag(str[*(i)]))
 	{
-		all.flags = create_flags(str, i);
+		all = create_flags(str, i, all);
 		// return (all);
 		//	printf("  flags: %s", all.flags);
 		(*i)++;

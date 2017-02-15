@@ -8,7 +8,10 @@
 typedef struct	s_var
 {
     char parameter;
-    char *flags;
+    char null;
+	char hash;
+	char min;
+	char space;
     int width;
     int precision;
     int size;
@@ -25,4 +28,4 @@ int check_type(char c);
 int check_flag(char c);
 int check_width(char c);
 
-char *create_flags(char *str, int *i);
+t_var create_flags(char *str, int *i, t_var all);

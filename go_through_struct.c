@@ -4,7 +4,10 @@
 void free_struct(t_var *strc)
 {
     strc->parameter = NULL;
-    strc->flags = NULL;
+    strc->hash = NULL;
+    strc->min = NULL;
+    strc->null = NULL;
+    strc->space = NULL;
     strc->width = NULL;
     strc->precision = NULL;
     strc->size = NULL;

@@ -19,20 +19,18 @@ int check_flag(char c)
 	}
 	return (0);
 }
-
-char *create_flags(char *str, int *i)
+t_var create_flags(char *str, int *i, t_var all)
 {
-	char *res;
-	int j;
 
-	res = ft_strnew(6);
-	j = 0;
-	while (check_flag(str[*i]))
-	{
-		res[j] = str[*i];
-		(*i)++;
-		j++;
-	}
-	(*i)--;
-	return (res);
+
+	if(str[*i] == '0')
+		all.null = '0';
+	if(str[*i] == '#')
+		all.hash = '#';
+	if(str[*i] == '-')
+		all.min = '-';
+	if(str[*i] == ' ')
+		all.space = ' ';
+	(*i)++;
+	return (all);
 }
