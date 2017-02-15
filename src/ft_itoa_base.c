@@ -5,14 +5,12 @@
 #include "printf.h"
 #include "stdlib.h"
 
-char	*ft_itoa_base(int value, int base)
+char	*ft_itoa_base(long long value, int base, char *hex)
 {
     int		i;
-    int		n;
+    long long		n;
     char	*s;
-    char	*hex;
 
-    hex = "0123456789ABCDEF";
     i = (value < 0 && base == 10) ? 2 : 1;
     n = value;
     while (n /= base)
