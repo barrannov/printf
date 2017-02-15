@@ -24,7 +24,10 @@ int ft_printf(char *str, ...)
 		else if (str[i] == '%')
 		{
 			i++;
-			all = create_struct(&i, str);
+			all = create_struct(&i, str, all);
+			printf("  precision: %d", all.precision);
+			printf("  flags: %s", all.flags);
+			printf("  width: %d", all.width);
 			go_through_struct(all, va_arg(myl, char *));
 		}
 		else
@@ -48,8 +51,8 @@ int main()
 	 printf("%c\n", aa.type);
 	*/
 	char a[3] = "sd";
-	ft_printf("%#1234d", 5);
-	// printf("\n%'''''''6''''''''ll3         %d", 5);
+	ft_printf("%#20.12........#...66..13........0.5", 5);
+	// printf("\n%-#d", 5);
 
 	// printf("\n{%0d}", 12);
 	return 0;

@@ -7,7 +7,7 @@ void free_struct(t_var *strc)
     strc->flags = NULL;
     strc->width = NULL;
     strc->precision = NULL;
-    strc->length = NULL;
+    strc->size = NULL;
     strc->type = NULL;
 }
 
