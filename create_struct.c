@@ -27,27 +27,26 @@ int create_numbers(char *str, int *i)
 }
 
 
-
 int check_precision(char c)
 {
-	if(c == '.')
+	if (c == '.')
 		return (1);
 	return (0);
 }
 
 int check_size(char c)
 {
-	if(c == 'l')
+	if (c == 'l')
 		return (1);
-	if(c == 'L')
+	if (c == 'L')
 		return (1);
-	if(c == 'h')
+	if (c == 'h')
 		return (1);
-	if(c == 'j')
+	if (c == 'j')
 		return (1);
-	if(c == 'z')
+	if (c == 'z')
 		return (1);
-	if(c == 't')
+	if (c == 't')
 		return (1);
 	return (0);
 }
@@ -72,25 +71,25 @@ t_var create_struct(int *i, char *str, t_var all)
 		all = create_flags(str, i, all);
 		// return (all);
 		//	printf("  flags: %s", all.flags);
-		(*i)++;
-		return 	create_struct(i, str, all);
+		//(*i)++;
+//		return 	create_struct(i, str, all);
 	}
 	if (check_width(str[*i]))
 	{
 		all.width = create_numbers(str, i);
 		//	printf("  width: %d", all.width);
-		(*i)++;
-		return  create_struct(i, str, all);
+		//	(*i)++;
+//		return  create_struct(i, str, all);
 	}
-	if(check_precision(str[*i]))
+	if (check_precision(str[*i]))
 	{
 		(*i)++;
-		temp = 	create_numbers(str, i);
-			all.precision = temp;
+		temp = create_numbers(str, i);
+		all.precision = temp;
 		//printf("   precision: %d", all.precision);
-		(*i)++;
+		//	(*i)++;
 		//free_struct(&all);
-		return 	create_struct(i, str, all);
+//		return 	create_struct(i, str, all);
 	}
 	/*if(check_size(str[*i]))
 	{
@@ -104,6 +103,13 @@ t_var create_struct(int *i, char *str, t_var all)
 		// return (all);
 		//(*i)++;
 	}
+	else
+	{
+		(*i)++;
+
+		return create_struct(i, str, all);
+	}
+
 	//printf("  flags: %s", all.flags);
 	//printf("  width: %d", all.width);
 	//printf("   precision: %d", all.precision);
