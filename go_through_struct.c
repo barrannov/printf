@@ -27,17 +27,11 @@ void go_through_struct(t_var all, va_list arg)
 	 *etc*/
 	char *res;
 	int temp;
-	temp = va_arg(arg, int );
-
 	int t;
 
-	t = length_of_a(all.type, temp);
-	int a;
-
-	a = all.width > t ? all.width : t;
-	printf("  %d", a);
-	res = ft_strnew((size_t)(all.width > t ? all.width : t));
-
-	//handle_type(all.type, arg);
-
+	temp = va_arg(arg, int );
+	t = length_of_a(all, temp);
+	printf("  %d", t);
+	res = ft_strnew((size_t)length_of_a(all, temp));
+	handle_type(all.type, arg);
 }

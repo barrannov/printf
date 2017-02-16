@@ -1,8 +1,6 @@
 //
 // Created by Aleksandr Baranov on 2/16/17.
 //
-
-
 int check_size(char c)
 {
 	if (c == 'l')
@@ -38,5 +36,3 @@ int create_size(char *str, int *i)
 		return (6);
 	return (0);
 }
-
-

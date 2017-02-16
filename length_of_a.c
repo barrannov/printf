@@ -4,29 +4,6 @@
 
 #include "ft_printf.h"
 
-char *itoa_basee(int value, int base)
-{
-	static char rep[] = "0123456789abcdef";
-	static char buf[50];
-	char *ptr;
-	int num;
-
-	ptr = &buf[49];
-	*ptr = '\0';
-	num = value;
-	if (value < 0 && base == 10)
-		value *= -1;
-	if (value == 0)
-		*--ptr = rep[value % base];
-	while (value != 0)
-	{
-		*--ptr = rep[value % base];
-		value /= base;
-	}
-	if (num < 0 && base == 10)
-		*--ptr = '-';
-	return (ptr);
-}
 int count(long long arg, int base)
 {
 	int i;
@@ -39,34 +16,40 @@ int count(long long arg, int base)
 	}
 	return (i);
 }
-int length_of_a(char type, int arg)
-{
-	char *hex;
 
-	char *str = itoa_basee(arg, 16);
-	hex = "0123456789ABCDEF";
-	if (type == 's')
-		return ((int)ft_strlen((char *)arg));
-	else if (type == 'p')
-		printf("%s", str);
-			//printf("%s", ft_itoa_base((int)arg, 16, hex));
-	else if (type == 'd' || type == 'i')
-		return count((int)arg, 10);
-	else if (type == 'o')
-		return count((int)arg, 8);
-	else if (type == 'O')
-		return count(arg, 8);
-	else if (type == 'u')
-		return count((unsigned int) arg, 10);
-	else if (type == 'U')
-		return count((unsigned long) arg, 10);
-	else if (type == 'X')
-	{
-		return count(arg, 16);
-	}
-	else if (type == 'x')
-		return count(arg, 16);
-	else if (type == 'c' || type == 'C')
-		return 1;
-	return 0;
+int check_biggest(int a, int b, int c)
+{
+    if(a >= b && b >= c || a >= c && c >= b)
+        return a;
+    if(b >= a&& a >= c || b >= c && c>= a)
+        return b;
+    if(c >= a && a>= b || c >= b&&a >= a)
+        return c;
+}
+
+int length_of_a(t_var all, int arg)
+{
+    int t;
+
+    t = 0;
+	if (all.type == 's')
+		t = ((int)ft_strlen((char *)arg));
+	else if (all.type == 'p')
+        t = (count(arg, 16) + 2);
+    else if (all.type == 'd' || all.type == 'i')
+		t = count(arg, 10);
+	else if (all.type == 'o' || all.type == 'O')
+		t =  count(arg, 8);
+	else if (all.type == 'u')
+		t = count((unsigned int) arg, 10);
+	else if (all.type == 'U')
+		t = count((unsigned long) arg, 10);
+	else if (all.type == 'X' || all.type == 'x')
+		t = count(arg, 16);
+	else if (all.type == 'c' || all.type == 'C')
+		t = 1;
+    t = check_biggest(all.width, all.precision, t);
+
+
+	return t;
 }
