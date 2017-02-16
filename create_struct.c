@@ -76,71 +76,33 @@ t_var create_struct(int *i, char *str, t_var all)
 	//t_var all;
 
 	int temp;
-	// if(str[(*i)] == '%')
-	//   (*i)++;
-	//  while (str[(*i)]) {
-	temp = 0;
+	if (str[*i] == '%')
+	{
+		free_struct(&all);
+		all.type = '%';
+		return all;
+	}
 	if (check_flag(str[*(i)], str[*i - 1]))
-	{
 		all = create_flags(str, i, all);
-		// return (all);
-		//	printf("  flags: %s", all.flags);
-		//(*i)++;
-//		return 	create_struct(i, str, all);
-	}
 	if (is_digit(str[*i]))
-	{
 		all.width = create_numbers(str, i);
-		//	printf("  width: %d", all.width);
-		//	(*i)++;
-//		return  create_struct(i, str, all);
-	}
 	if (check_precision(str[*i], str[*i + 1]))
 	{
 		(*i)++;
 		temp = create_numbers(str, i);
 		all.precision = temp;
-		//printf("   precision: %d", all.precision);
-		//	(*i)++;
-		//free_struct(&all);
-//		return 	create_struct(i, str, all);
 	}
-	/*if(check_size(str[*i]))
-	{
-		all.size = create_size()^
-		(*i)++;
-	}*/
-	//TODO Доделать size парсинг
 	if (check_size(str[*i]))
-	{
 		all.size = (temp = create_size(str, i)) > all.size ? temp : all.size;
-		//	printf("    type: %c", all.type);
-		// return (all);
-		//(*i)++;
-	}
 	if (check_type(str[*i]))
 	{
 		all.type = str[(*i)];
-		//	printf("    type: %c", all.type);
-		// return (all);
-		//(*i)++;
+		check_override(&all);
 	}
 	else
 	{
 		(*i)++;
-
 		return create_struct(i, str, all);
 	}
-
-	//printf("  flags: %s", all.flags);
-	//printf("  width: %d", all.width);
-	//printf("   precision: %d", all.precision);
-	//printf("    type: %c", all.type);
-
-//	else
-//	{
-//		write(1, &str[*i], 1);
-//	}
-	//   }
 	return (all);
 }

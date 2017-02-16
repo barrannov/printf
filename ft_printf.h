@@ -26,5 +26,6 @@ void handle_type(char type, void *arg);
 int check_type(char c);
 int check_flag(char c, char b);
 int is_digit(char c);
+void check_override(t_var *all);
 
 t_var create_flags(char *str, int *i, t_var all);

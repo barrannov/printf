@@ -26,7 +26,7 @@ int ft_printf(char *str, ...)
 
 			i++;
 			all = create_struct(&i, str, all);
-            printf("  hash: {%d}", all.hash);
+			printf("  |hash: {%d}", all.hash);
 			printf("  null: {%d}", all.null);
 			printf("  min: {%d}", all.min);
 			printf("  space:{%d}", all.space);
@@ -34,9 +34,11 @@ int ft_printf(char *str, ...)
 			printf("  width: {%d}", all.width);
 			printf("  precision: {%d}", all.precision);
 			printf("  size: {%d}", all.size);
-			printf("  type: {%c}", all.type);
-
-			go_through_struct(all, va_arg(myl, char *));
+			printf("  type: {%c}|      ", all.type);
+			if(all.type != '%')
+				go_through_struct(all, va_arg(myl, char *));
+			else
+				write(1, "%", 1);
 		}
 		else
 		{
@@ -60,7 +62,7 @@ int main()
 	*/
 
 	char a[3] = "sd";
-	ft_printf("{%.0d}", 5);
+	ft_printf("{%15+       .00-d}", 5);
 	// printf("\n%-#d", 5);
 
 	return 0;
