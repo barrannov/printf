@@ -36,7 +36,7 @@ int ft_printf(char *str, ...)
 			printf("  size: {%d}", all.size);
 			printf("  type: {%c}|      ", all.type);
 			if(all.type != '%')
-				go_through_struct(all, va_arg(myl, char *));
+				go_through_struct(all, myl);
 			else
 				write(1, "%", 1);
 		}
@@ -62,7 +62,8 @@ int main()
 	*/
 
 	char a[3] = "sd";
-	ft_printf("{%15+       .00-d}", 5);
+	ft_printf("{%+hz 0123.43.3d}", 107);
+
 	// printf("\n%-#d", 5);
 
 	return 0;
