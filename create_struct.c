@@ -51,9 +51,23 @@ int check_size(char c)
 	return (0);
 }
 
-char *create_size(char *str, int i)
+int create_size(char *str, int *i)
 {
-
+	if (str[*i] == 'h' && str[*i + 1] == 'h')
+		return (1);
+	if (str[*i] == 'h')
+		return (2);
+	if (str[*i] == 'h')
+		return (2);
+	if (str[*i] == 'l' && str[*i + 1] != 'l')
+		return (3);
+	if (str[*i] == 'l' && str[*i + 1] == 'l')
+		return (4);
+	if (str[*i] == 'j')
+		return (5);
+	if (str[*i] == 'z')
+		return (6);
+	return (0);
 }
 
 t_var create_struct(int *i, char *str, t_var all)
@@ -66,7 +80,7 @@ t_var create_struct(int *i, char *str, t_var all)
 	//   (*i)++;
 	//  while (str[(*i)]) {
 	temp = 0;
-	if (check_flag(str[*(i)]))
+	if (check_flag(str[*(i)], str[*i - 1]))
 	{
 		all = create_flags(str, i, all);
 		// return (all);
@@ -93,9 +107,17 @@ t_var create_struct(int *i, char *str, t_var all)
 	}
 	/*if(check_size(str[*i]))
 	{
-		all.size = create_size()
+		all.size = create_size()^
 		(*i)++;
 	}*/
+	//TODO Доделать size парсинг
+	if (check_size(str[*i]))
+	{
+		all.size = (temp = create_size(str, i)) > all.size ? temp : all.size;
+		//	printf("    type: %c", all.type);
+		// return (all);
+		//(*i)++;
+	}
 	if (check_type(str[*i]))
 	{
 		all.type = str[(*i)];
@@ -103,15 +125,6 @@ t_var create_struct(int *i, char *str, t_var all)
 		// return (all);
 		//(*i)++;
 	}
-/*
-	if (check_size(str[*i]))
-	{
-		all.size = str[(*i)];
-		//	printf("    type: %c", all.type);
-		// return (all);
-		//(*i)++;
-	}
-*/
 	else
 	{
 		(*i)++;

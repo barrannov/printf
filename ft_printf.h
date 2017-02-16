@@ -6,10 +6,11 @@
 typedef struct	s_var
 {
     char parameter;
-    char null;
-	char hash;
-	char min;
-	char space;
+    int null;
+	int hash;
+	int min;
+	int space;
+	int plus;
     int width;
     int precision;
     int size;
@@ -23,7 +24,7 @@ void go_through_struct(t_var stc, void *arg);
 void free_struct(t_var *strc);
 void handle_type(char type, void *arg);
 int check_type(char c);
-int check_flag(char c);
+int check_flag(char c, char b);
 int is_digit(char c);
 
 t_var create_flags(char *str, int *i, t_var all);

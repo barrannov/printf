@@ -5,7 +5,7 @@
 
 #include "ft_printf.h"
 
-int check_flag(char c)
+int check_flag(char c, char b)
 {
 	int i;
 
@@ -13,7 +13,7 @@ int check_flag(char c)
 	char type[6] = "-0+ #";
 	while (type[i])
 	{
-		if (c == type[i])
+		if (c == type[i] && b != '.')
 			return (1);
 		i++;
 	}
@@ -24,12 +24,14 @@ t_var create_flags(char *str, int *i, t_var all)
 
 
 	if(str[*i] == '0' && !is_digit(str[*i - 1]))
-		all.null = '0';
-	if(str[*i] == '#')
+		all.null = 1;
+	if(str[*i] == 1)
 		all.hash = '#';
 	if(str[*i] == '-')
-		all.min = '-';
+		all.min = 1;
 	if(str[*i] == ' ')
-		all.space = ' ';
+		all.space = 1;
+	if(str[*i] == '+')
+		all.plus = 1;
 	return (all);
 }

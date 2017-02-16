@@ -26,15 +26,15 @@ int ft_printf(char *str, ...)
 
 			i++;
 			all = create_struct(&i, str, all);
-            printf("\n");
-            printf("  hash: %c", all.hash);
-			printf("  null: %c", all.null);
-			printf("  min: %c", all.min);
-			printf("  space:{%c}", all.space);
-			printf("  width: %d", all.width);
-			printf("  precision: %d", all.precision);
-			printf("  type: %c", all.type);
-			printf("  size: %c", all.size);
+            printf("  hash: {%d}", all.hash);
+			printf("  null: {%d}", all.null);
+			printf("  min: {%d}", all.min);
+			printf("  space:{%d}", all.space);
+			printf("  plus:{%d}", all.plus);
+			printf("  width: {%d}", all.width);
+			printf("  precision: {%d}", all.precision);
+			printf("  size: {%d}", all.size);
+			printf("  type: {%c}", all.type);
 
 			go_through_struct(all, va_arg(myl, char *));
 		}
@@ -60,7 +60,7 @@ int main()
 	*/
 
 	char a[3] = "sd";
-	ft_printf("%#.2#01.12..-.....#######..66..1....900#1000d", 5);
+	ft_printf("{%.0d}", 5);
 	// printf("\n%-#d", 5);
 
 	return 0;
