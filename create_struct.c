@@ -103,6 +103,7 @@ t_var create_struct(int *i, char *str, t_var all)
 		// return (all);
 		//(*i)++;
 	}
+/*
 	if (check_size(str[*i]))
 	{
 		all.size = str[(*i)];
@@ -110,6 +111,7 @@ t_var create_struct(int *i, char *str, t_var all)
 		// return (all);
 		//(*i)++;
 	}
+*/
 	else
 	{
 		(*i)++;
