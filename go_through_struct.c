@@ -14,11 +14,11 @@ void free_struct(t_var *strc)
 	strc->type = (char )NULL;
 }
 
-//TODO function that define length of argument and malloc memory for res
-
+//DONE function that define length of argument and malloc memory for res
+//TODO Проверить каждый тип на работоспособность с минусами и тд. Начать реализовывать порядок
 //1. Function that returns base of type
 //2. Function that returns length of str if arg is str
-//TODO create funcs in  separate file that return length of arg
+//DONE create funcs in  separate file that return length of arg
 //
 
 void go_through_struct(t_var all, va_list arg)
