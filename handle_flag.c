@@ -7,10 +7,21 @@
 
 void check_override(t_var *all)
 {
-	if(all->min == 1 && all->null == 1)
+	if (all->min == 1 && all->null == 1)
 		all->null = 0;
-	if(all->plus == 1 && all->space == 1)
+	if (all->plus == 1 && all->space == 1)
 		all->space = 0;
+	if (all->precision > 0 && all->null == 1 && all->type != 'f')
+		all->null = 0;
+	if (all->width == 0 || all->width == all->precision)
+		all->min = 0;
+	if (all->type != 'd' && all->type != 'i')
+	{
+		all->plus = 0;
+		all->space = 0;
+	}
+	if(all->type != 'O' && all->type != 'o' && all->type != 'i' && all->type != 'x')
+		all->hash = 0;
 }
 
 int check_flag(char c, char b)

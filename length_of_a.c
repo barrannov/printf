@@ -22,9 +22,10 @@ int check_biggest(int a, int b, int c)
     if(a >= b && b >= c || a >= c && c >= b)
         return a;
     if(b >= a&& a >= c || b >= c && c>= a)
-        return b;
+		return b;
     if(c >= a && a>= b || c >= b&&a >= a)
         return c;
+
 }
 
 int length_of_a(t_var all, int arg)
@@ -49,7 +50,6 @@ int length_of_a(t_var all, int arg)
 	else if (all.type == 'c' || all.type == 'C')
 		t = 1;
     t = check_biggest(all.width, all.precision, t);
-
 
 	return t;
 }

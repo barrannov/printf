@@ -21,18 +21,13 @@ int check_size(char c)
 int create_size(char *str, int *i)
 {
 	if (str[*i] == 'h' && str[*i + 1] == 'h')
+	{
+		(*i)++;
 		return (1);
-	if (str[*i] == 'h')
+	}
+	if (str[*i] == 'h' && str[*i + 1] != 'h' )
 		return (2);
-	if (str[*i] == 'h')
-		return (2);
-	if (str[*i] == 'l' && str[*i + 1] != 'l')
+	if ((str[*i] == 'l' ) || (str[*i] == 'j') || (str[*i] == 'z'))
 		return (3);
-	if (str[*i] == 'l' && str[*i + 1] == 'l')
-		return (4);
-	if (str[*i] == 'j')
-		return (5);
-	if (str[*i] == 'z')
-		return (6);
 	return (0);
 }

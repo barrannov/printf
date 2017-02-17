@@ -57,7 +57,10 @@ t_var create_struct(int *i, char *str, t_var all)
 		all.precision = temp;
 	}
 	if (check_size(str[*i]))
+	{
 		all.size = (temp = create_size(str, i)) > all.size ? temp : all.size;
+		printf("\nsuize  :%d", all.size);
+	}
 	if (check_type(str[*i]))
 	{
 		all.type = str[(*i)];

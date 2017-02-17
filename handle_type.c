@@ -21,9 +21,9 @@ int check_type(char c)
 }
 
 void handle_type(char type,  int arg) {
-//    char	*hex;
+    char	*hex;
 //
-//    hex = "0123456789abcdef";
+    hex = "0123456789abcdef";
 //    if (type == 's') {
 //        ft_putstr(arg);
 //    }
@@ -32,14 +32,14 @@ void handle_type(char type,  int arg) {
 //        ft_putstr((const char *)"0x");
 //        ft_putstr((const char *) *(ft_itoa_base(arg, 16, hex)));
 //    }
-//    else if(type == 'd' || type == 'i')
-//        ft_putnbr((int)arg);
-//    else if(type == 'o')
-//        ft_putstr(ft_itoa_base((int)arg, 8, hex));
+  //   if(type == 'd' || type == 'i')
+    //    ft_putnbr(arg);
+ //   else if(type == 'o')
+   //     ft_putstr(ft_itoa_base((int)arg, 8, hex));
 //    else if(type == 'O')
 //        ft_putstr(ft_itoa_base(arg, 8, hex));
      if(type == 'u')
-        ft_putnbr((unsigned short)arg);
+        ft_putnbr((unsigned)arg);
 //    else if(type == 'U')
 //        ft_putnbr((unsigned long)arg);
 //    else if(type == 'X')
