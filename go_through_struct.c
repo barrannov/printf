@@ -21,6 +21,19 @@ void free_struct(t_var *strc)
 //DONE create funcs in  separate file that return length of arg
 //
 
+
+char *move_one(char *str) {
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		str[i] = str[i+1];
+		i++;
+	}
+	return  str;
+}
+
 char *start_fill_res(char *res, int len_r, t_var all, void *arg)
 {
 	int i;
@@ -28,18 +41,25 @@ char *start_fill_res(char *res, int len_r, t_var all, void *arg)
 	char *str;
 
 	str = ft_itoa( arg);
+
 	nul = ' ';
 	i = 0;
 	int temp;
-
+ //printf("\nstr - %s", str);
 	temp = ft_strlen(str);
 
 	if (all.min == 0)
 	{
+
 		if (all.space == 1)
 		{
 			res[i++] = ' ';
-			all.plus = 0;
+			all.space = 0;
+		}
+		if (str[0] =='0' && (all.type == 'd' ||all.type == 'i') && all.null == 1) {
+			res[i++] = '-';
+			str = move_one(str);
+			len_r++;
 		}
 		if (all.plus == 1 && (int) arg > 0 && all.null == 1)
 		{
@@ -60,8 +80,19 @@ char *start_fill_res(char *res, int len_r, t_var all, void *arg)
 //i--;
 	//if(all.null)
 	temp = 0;
+
 	if (all.space == 1)
 		res[i++] = ' ';
+	if (str[0] =='0' && (all.type == 'd' ||all.type == 'i')) {
+		res[i++] = '-';
+		str =  move_one(str);
+		len_r++;
+	}
+    if (all.hash == 1)
+    {
+        res[i++] = '0';
+        res[i++] = 'x';
+    }
 	if (all.plus == 1 && (int) arg > 0)
 		res[i++] = '+';
 	while (str[temp])

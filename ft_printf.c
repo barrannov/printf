@@ -57,7 +57,10 @@ int main()
 	char a[3] = "sd";
 	//ft_printf("{%.o}", "qwert");
 	//ft_printf("\nmy :%u", 45);
-	//ft_printf("\nmy:%- ll012d", 103242342344343);
-	printf("\nor:%lld",18446744073709551615);
-	return 0;
+//	ft_printf("\nmy:%+12d",45);
+//	printf("\nor:%+12d",45);
+    printf("\tOrigin:\t|%.-10d|\t|%-15.-10d|\t|%15.-10d|\n",42,42,42,42);fflush(stdout);
+    ft_printf("\tft:\t|%.-10d|\t|%-15.-10d|\t|%15.-10d|\n",42,42,42,42);fflush(stdout);
+
+    return 0;
 }

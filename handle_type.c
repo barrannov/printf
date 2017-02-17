@@ -38,8 +38,8 @@ void handle_type(char type,  int arg) {
    //     ft_putstr(ft_itoa_base((int)arg, 8, hex));
 //    else if(type == 'O')
 //        ft_putstr(ft_itoa_base(arg, 8, hex));
-     if(type == 'u')
-        ft_putnbr((unsigned)arg);
+  //   if(type == 'u')
+    //    ft_putnbr((unsigned)arg);
 //    else if(type == 'U')
 //        ft_putnbr((unsigned long)arg);
 //    else if(type == 'X')
