@@ -20,8 +20,9 @@ int ft_printf(char *str, ...)
 		{
 			write(1, "%", 1);
 			i++;
+			i++;
 		}
-		else if (str[i] == '%')
+		else if (str[i] == '%' && i + 1!= ft_strlen(str))
 		{
 
 			i++;
@@ -29,7 +30,6 @@ int ft_printf(char *str, ...)
 
 			if(all.type != '%')
 				go_through_struct(all, myl);
-
 			else
 				write(1, "%", 1);
 		}
@@ -53,11 +53,55 @@ int main()
 	 if(aa.type)
 	 printf("%c\n", aa.type);
 	*/
-
+	char *hex;
+//
+	hex = "0123456789abcdef";
+	//ft_putstr(ft_itoa_base(-45, 16, hex));
 	char a[3] = "sd";
 	//ft_printf("{%.o}", "qwert");
 	//ft_printf("\nmy :%u", 45);
-	//ft_printf("\nmy:%- ll012d", 103242342344343);
-	printf("\nor:%lld",18446744073709551615);
+	//ft_printf("\n1my:{%12d}", 45);
+	printf("\n1or:{%%% Hello!}, 12\n");
+//
+//	ft_printf("\nmy:{%12d}", -45);
+//	printf("\nor:{%12d}\n", -45);
+//
+//	ft_printf("\n2my:{%012d}", 45);
+//	printf("\n2or:{%012d}\n", 45);
+//
+//	ft_printf("\nmy:{%012d}", -45);
+//	printf("\nor:{%012d}\n", -45);
+//
+//	ft_printf("\n3my:{% 012d}", 45);
+//	printf("\n3or:{% 012d}\n", 45);
+//
+//	ft_printf("\nmy:{% 012d}", -45);
+//	printf("\nor:{% 012d}\n", -45);
+//
+//	ft_printf("\n4my:{%+012d}", 45);
+//	printf("\n4or:{%+012d}\n", 45);
+//
+//	ft_printf("\nmy:{%+012d}", -45);
+//	printf("\nor:{%+012d}\n", -45);
+//
+//	ft_printf("\n5my:{%-12d}", 45);
+//	printf("\n5or:{%-12d}\n", 45);
+//
+//	ft_printf("\nmy:{%-12d}", -45);
+//	printf("\nor:{%-12d}\n", -45);
+//
+//	ft_printf("\n6my:{%- 12d}", 45);
+//	printf("\n6or:{%- 12d}\n", 45);
+//
+//	ft_printf("\nmy:{%- 12d}", -45);
+//	printf("\nor:{%- 12d}\n", -45);
+//
+//	ft_printf("\n7my:{%-+12d}", 45);
+//	printf("\n7or:{%-+12d}\n", 45);
+
+
+//	ft_printf("\nmy:%ho", -12);
+//	printf("\nor:{%ho}\n", -12);
+//	//printf("%i", 1223456);
 	return 0;
 }

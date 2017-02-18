@@ -15,6 +15,8 @@ void check_override(t_var *all)
 		all->null = 0;
 	if (all->width == 0 || all->width == all->precision)
 		all->min = 0;
+/*	if(all->width > 0 && (all->null == 0))
+		all->space = 0;*/
 	if (all->type != 'd' && all->type != 'i')
 	{
 		all->plus = 0;

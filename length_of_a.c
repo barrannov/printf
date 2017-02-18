@@ -19,16 +19,16 @@ int count(long long arg, int base)
 
 int check_biggest(int a, int b, int c)
 {
-    if(a >= b && b >= c || a >= c && c >= b)
+    if((a >= b && b >= c) || (a >= c && c >= b))
         return a;
-    if(b >= a&& a >= c || b >= c && c>= a)
+    if((b >= a&& a >= c )|| (b >= c && c>= a))
 		return b;
-    if(c >= a && a>= b || c >= b&&a >= a)
+    if((c >= a && a>= b )||( c >= b&&a >= a))
         return c;
-
+	return  0;
 }
 
-int length_of_a(t_var all, int arg)
+int length_of_a(t_var all, void * arg, int *base)
 {
     int t;
 
@@ -36,20 +36,18 @@ int length_of_a(t_var all, int arg)
 	if (all.type == 's')
 		t = ((int)ft_strlen((char *)arg));
 	else if (all.type == 'p')
-        t = (count(arg, 16) + 2);
+        t = (count(arg, *base = 16) + 2);
     else if (all.type == 'd' || all.type == 'i')
-		t = count(arg, 10);
+		t = count(arg, *base = 10);
 	else if (all.type == 'o' || all.type == 'O')
-		t =  count(arg, 8);
+		t =  count(arg, *base = 8);
 	else if (all.type == 'u')
-		t = count((unsigned int) arg, 10);
+		t = count((unsigned int) arg, *base = 10);
 	else if (all.type == 'U')
-		t = count((unsigned long) arg, 10);
+		t = count((unsigned long) arg, *base = 10);
 	else if (all.type == 'X' || all.type == 'x')
-		t = count(arg, 16);
+		t = count(arg, *base = 16);
 	else if (all.type == 'c' || all.type == 'C')
 		t = 1;
-    t = check_biggest(all.width, all.precision, t);
-
 	return t;
 }

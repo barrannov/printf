@@ -5,10 +5,10 @@
 #include "printf.h"
 #include "stdlib.h"
 
-char	*ft_itoa_base(long long value, int base, char *hex)
+char	*ft_itoa_base(unsigned long int value, int base, char *hex)
 {
     int		i;
-    long long		n;
+	unsigned  long int		n;
     char	*s;
 
     i = (value < 0 && base == 10) ? 2 : 1;
