@@ -36,6 +36,27 @@ char *move_one(char *str)
 	return (str);
 }
 
+void *put_m_or_p(t_var *all, void *arg, int len_of_num, int *len_r)
+{
+	int a = (int)arg;
+	if ((int) arg < 0 && ((all->null == 1 || len_of_num == *len_r)))
+	{
+		a = -(int) arg;
+		ft_putchar('-');
+		all->plus = 0;
+	}
+	else if (all->plus == 1 && (all->null == 1 || len_of_num == *len_r))
+	{
+		ft_putchar('+');
+		(*len_r)--;
+		all->plus = 0;
+	}
+	if (all->plus)
+		(*len_r)--;
+	return a;
+}
+
+
 void start_fill_res(int len_r, t_var all, void *arg, int base)
 {
 	int i;
@@ -45,133 +66,93 @@ void start_fill_res(int len_r, t_var all, void *arg, int base)
 
 	hex = "0123456789abcdef";
 //	str = ft_itoa(arg);
-	//printf("\nafter itoa:%d",str);
 	nul = ' ';
 	i = 0;
-	int temp;
-	temp = length_of_a(all, (arg < 0 ? ((int) arg) : -(int) arg), &base);
+	int len_of_num;
+	len_of_num = length_of_a(all, arg, &base);
+	int pres;
 
-	if ((int)arg < 0 &&all.min)
-	{
-		ft_putchar('-');
+	pres = 0;
+	if(all.precision > len_of_num)
+		pres = all.precision - len_of_num;
+
+	//printf("%d\n", len_of_num);
+	if((int)arg < 0)
 		all.space = 0;
-		all.plus = 0;
-		len_r--;
-	}
 	if (all.min == 0)
 	{
-		if (all.space == 1 && arg > 0)
+		arg = put_m_or_p(&all, arg, len_of_num, &len_r);
+		if (all.null)
+		{
+			nul = '0';
+			all.null = 0;
+		}
+		if(all.space == 1 && (int)arg > 0)
 		{
 			ft_putchar(' ');
 			len_r--;
 			all.space = 0;
 		}
-		if (all.plus == 1 && arg > 0 && all.null == 1)
+		if(all.hash == 1 && all.type == 'o')
+		{
+			ft_putstr("0");
+			len_r--;
+			all.hash= 0;
+		}
+		if(all.hash == 1 && (all.type == 'x' || all.type == 'X'))
+		{
+			ft_putstr("0x");
+			len_r -= 2;
+			all.hash= 0;
+		}
+
+		while (len_r > len_of_num)
+		{
+			ft_putchar(nul);
+			len_r--;
+		}
+	}
+	if (arg != NULL)
+	{
+		arg = put_m_or_p(&all, arg, len_of_num, &len_r);
+		if(all.space == 1 && (int)arg > 0)
+		{
+			ft_putchar(' ');
+			len_r--;
+			all.space = 0;
+		}
+		if (all.plus == 1 && (int)arg > 0)
 		{
 			ft_putchar('+');
 			all.plus = 0;
-			len_r--;
 		}
-		else if (all.plus == 1 && arg > 0)
-			len_r--;
-		if (all.null == 1)
-			nul = '0';
-		while (i < len_r - temp)
+		if ((int) arg < 0)
+			ft_putchar('-');
+		if(all.hash == 1 && all.type == 'o')
 		{
-			ft_putchar(nul);
-			i++;
+			ft_putstr("0");
+			len_r--;
+			all.hash= 0;
 		}
-
-	}
-
-	//printf("\nmy value: %d", arg);
-	if ((int)arg < 0 && !all.min )
-	{
-		ft_putchar('-');
-		len_r--;
-		all.space = 0;
-		//	arg = -arg;
-		all.plus = 0;
-	}
-//i--;
-	//if(all.null)
-	temp = 0;
-	if (all.space == 1 && arg > 0)
-	{
-		ft_putchar(' ');
-		len_r--;
-	}
-	if (all.plus == 1 && arg > 0)
-	{
-		ft_putchar('+');
-		len_r--;
-	}
-
-
-	if (arg < 0 && (all.type == 'd' || all.type == 'i'))
-	{
-		ft_putchar('-');
-		len_r--;
-
-	}
-
-	handle_type(all.type, arg);
-
-	if (all.min == 1)
-	{
-		i++;
-		i++;
-		while (i < len_r)
+		if(all.hash == 1 && (all.type == 'x' || all.type == 'X'))
 		{
-			ft_putchar(nul);
-			i++;
+			ft_putstr("0x");
+			len_r -= 2;
+			all.hash= 0;
 		}
+		while (pres)
+		{
+			ft_putchar('0');
+			pres--;
+		}
+		handle_type(all.type, (int) arg);
+		arg = NULL;
+		len_r -= len_of_num;
+		all.min = 0;
 	}
+	if (len_r > 0)
+		return start_fill_res(len_r, all, arg, base);
 }
-//
-//char *char_to_n(t_var all, int base, void *arg)
-//{
-//	char *hex;
-//	char *str;
-//
-//	str = ft_strnew(1);
-//	hex = "0123456789abcdef";
-//
-//	if (all.type == 's')
-//	{
-//		str = ft_strjoin(" ", arg);
-//	}
-//	else if (all.type == 'p')
-//
-//		str = ft_strjoin((const char *) "0x", (const char *) *(ft_itoa_base(()arg, 16, hex)));
-//
-//	if (all.type == 'd' || all.type == 'i')
-//	{int a;
-//		a= (int)arg;
-//		str = ft_strjoin(arg < 0 ? "-" : str, ft_itoa_base(((a < 0) ? (-a) : (a)), 10, hex));
-//	}
-//	else if (all.type == 'o')
-//		str = ft_strjoin(str, ft_itoa_base((int) arg, 8, hex));
-//	else if (all.type == 'O')
-//		str = ft_strjoin(str, ft_itoa_base(arg, 8, hex));
-//	if (all.type == 'u')
-//		str = ft_strjoin(str, ft_itoa_base((unsigned) arg, 10, hex));
-//	else if (all.type == 'U')
-//		str = ft_strjoin(str, ft_itoa_base((unsigned long) arg, 10, hex));
-//	else if (all.type == 'X')
-//	{
-//		hex = "0123456789ABCDEF";
-//		str = ft_strjoin(str, ft_itoa_base(arg, 16, hex));
-//	}
-//	else if (all.type == 'x')
-//		str = ft_strjoin(str, ft_itoa_base(arg, 16, hex));
-//	else if (all.type == 'c' || all.type == 'C')
-//	{
-//		str = ft_strnew(1);
-//		str[0] = (char)arg;
-//}
-//	return  (str);
-//}
 
 long long cast(t_var all, void *temp)
 {

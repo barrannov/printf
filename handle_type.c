@@ -25,6 +25,8 @@ void handle_type(char type, void *arg)
 	char *hex;
 
 	hex = "0123456789abcdef";
+	if ((int) arg < 0)
+		arg = -(int)arg;
 	if (type == 's')
 	{
 		ft_putstr(arg);
@@ -36,7 +38,7 @@ void handle_type(char type, void *arg)
 	}
 	if (type == 'd' || type == 'i')
 	{
-		ft_putnbr(arg < 0 ? ((int) arg) : -(int)arg);
+		ft_putnbr(arg);
 	}
 	else if (type == 'o')
 		ft_putstr(ft_itoa_base((unsigned) arg, 8, hex));

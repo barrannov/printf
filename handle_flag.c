@@ -5,7 +5,7 @@
 
 #include "ft_printf.h"
 
-void check_override(t_var *all)
+void check_override(t_var *all )
 {
 	if (all->min == 1 && all->null == 1)
 		all->null = 0;

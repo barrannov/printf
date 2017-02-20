@@ -57,13 +57,14 @@ int main()
 	//ft_printf("{%}");
 	//ft_printf("\nmy :%u", 45);
 	//ft_printf("\n1my:{%12d}", 45);
-	//printf("\n1or:{%Hello!}, 12\n", "sa");
+//	printf("\n% d\n", -15);
 //
-	ft_printf("\nmy:{%d}", 0);
-	printf("\nor:{%12d}\n", -45);
-
-//	ft_printf("\n2my:{%012d}", 45);
-//	printf("\n2or:{%012d}\n", 45);
+//	printf("\nmy:{%14.3d}", -14);
+//	printf("\nor:{%14.3d}\n", -14);
+//
+//
+//	ft_printf("\n2my:{%0122d}", 45);
+//	printf("\n2or:{%0122d}\n", 45);
 //
 //	ft_printf("\nmy:{%012d}", -45);
 //	printf("\nor:{%012d}\n", -45);
@@ -80,8 +81,8 @@ int main()
 //	ft_printf("\nmy:{%+012d}", -45);
 //	printf("\nor:{%+012d}\n", -45);
 //
-//	ft_printf("\n5my:{%-12d}", 45);
-//	printf("\n5or:{%-12d}\n", 45);
+//	ft_printf("\n5my:{%12d}", 45);
+//	printf("\n5or:{%12d}\n", 45);
 //
 //	ft_printf("\nmy:{%-12d}", -45);
 //	printf("\nor:{%-12d}\n", -45);
@@ -92,10 +93,10 @@ int main()
 //	ft_printf("\nmy:{%- 12d}", -45);
 //	printf("\nor:{%- 12d}\n", -45);
 //
-//	ft_printf("\n7my:{%-+12d}", 45);
-//	printf("\n7or:{%-+12d}\n", 45);
-
-
+//	ft_printf("\n7my:{%-+#12x}", 45);
+//	printf("\n7or:{%-+#12x}\n", 45);
+//
+//
 //	ft_printf("\nmy:%ho", -12);
 //	printf("\nor:{%ho}\n", -12);
 //	//printf("%i", 1223456);

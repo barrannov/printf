@@ -5,7 +5,7 @@
 #include "printf.h"
 #include "stdlib.h"
 
-char	*ft_itoa_base(unsigned long int value, int base, char *hex)
+char	*ft_itoa_base( long int value, int base, char *hex)
 {
     int		i;
 	unsigned  long int		n;

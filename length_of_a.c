@@ -4,12 +4,12 @@
 
 #include "ft_printf.h"
 
-int count(long long arg, int base)
+int count(unsigned long int arg, int base)
 {
 	int i;
 
 	i = 0;
-	while(arg > 0)
+	while (arg > 0)
 	{
 		arg /= base;
 		i++;
@@ -19,28 +19,33 @@ int count(long long arg, int base)
 
 int check_biggest(int a, int b, int c)
 {
-    if((a >= b && b >= c) || (a >= c && c >= b))
-        return a;
-    if((b >= a&& a >= c )|| (b >= c && c>= a))
+	if ((a >= b && b >= c) || (a >= c && c >= b))
+		return a;
+	if ((b >= a && a >= c) || (b >= c && c >= a))
 		return b;
-    if((c >= a && a>= b )||( c >= b&&a >= a))
-        return c;
-	return  0;
+	if ((c >= a && a >= b) || (c >= b && a >= a))
+		return c;
+	return 0;
 }
 
-int length_of_a(t_var all, void * arg, int *base)
+int length_of_a(t_var all, void *arg, int *base)
 {
-    int t;
+	int t;
 
-    t = 0;
+	t = 0;
+	if ((int) arg < 0)
+	{
+		arg = -(int)arg;
+		t++;
+	}
 	if (all.type == 's')
-		t = ((int)ft_strlen((char *)arg));
+		t = ((int) ft_strlen((char *) arg));
 	else if (all.type == 'p')
-        t = (count(arg, *base = 16) + 2);
-    else if (all.type == 'd' || all.type == 'i')
-		t = count(arg, *base = 10);
+		t = (count(arg, *base = 16) + 2);
+	else if (all.type == 'd' || all.type == 'i')
+		t += count(arg, *base = 10);
 	else if (all.type == 'o' || all.type == 'O')
-		t =  count(arg, *base = 8);
+		t = count(arg, *base = 8);
 	else if (all.type == 'u')
 		t = count((unsigned int) arg, *base = 10);
 	else if (all.type == 'U')
