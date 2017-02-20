@@ -49,24 +49,14 @@ void start_fill_res(int len_r, t_var all, void *arg, int base)
 	nul = ' ';
 	i = 0;
 	int temp;
-//	if ( str[0] == '0' && all.null != 1)
-//	{
-//		str[0] = '-';
-//}
-
-//	if( str[0] == ' ')
-//		str = move_one(str);
-	//if (all.type == 's')
 	temp = length_of_a(all, (arg < 0 ? ((int) arg) : -(int) arg), &base);
-	//printf("\ntemp : %d", temp);
-	//else
-	//	temp = count(arg, 1);
 
-	if (arg < 0 && !all.min && all.null == 1)
+	if ((int)arg < 0 &&all.min)
 	{
 		ft_putchar('-');
 		all.space = 0;
 		all.plus = 0;
+		len_r--;
 	}
 	if (all.min == 0)
 	{
@@ -94,7 +84,8 @@ void start_fill_res(int len_r, t_var all, void *arg, int base)
 
 	}
 
-	if (arg < 0 && !all.min && all.null != 1)
+	//printf("\nmy value: %d", arg);
+	if ((int)arg < 0 && !all.min )
 	{
 		ft_putchar('-');
 		len_r--;
@@ -115,15 +106,7 @@ void start_fill_res(int len_r, t_var all, void *arg, int base)
 		ft_putchar('+');
 		len_r--;
 	}
-//	if(all.type == 'x'  && all.)
-//	while (str[temp])
-//	{
-//
-//		res[i] = str[temp];
-//		temp++;
-//		i++;
-//	}
-	//printf("arg: %d", arg);
+
 
 	if (arg < 0 && (all.type == 'd' || all.type == 'i'))
 	{
@@ -131,11 +114,9 @@ void start_fill_res(int len_r, t_var all, void *arg, int base)
 		len_r--;
 
 	}
-//	if (arg < 0 && all.min == 1)
-//		arg = -arg;
+
 	handle_type(all.type, arg);
 
-	//ft_putstr(ft_itoa_base(arg, base, hex));
 	if (all.min == 1)
 	{
 		i++;
@@ -146,7 +127,6 @@ void start_fill_res(int len_r, t_var all, void *arg, int base)
 			i++;
 		}
 	}
-//	return res;
 }
 //
 //char *char_to_n(t_var all, int base, void *arg)
@@ -195,7 +175,6 @@ void start_fill_res(int len_r, t_var all, void *arg, int base)
 
 long long cast(t_var all, void *temp)
 {
-
 	if (all.size == 1)
 		return (unsigned char) temp;
 	if (all.size == 2)

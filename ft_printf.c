@@ -16,12 +16,8 @@ int ft_printf(char *str, ...)
 	while (str[i])
 	{
 		free_struct(&all);
-		if (str[i] == '%' && str[i + 1] == '%')
-		{
+		if (str[i] == '%' && str[i + 1] == '%' && (i++))
 			write(1, "%", 1);
-			i++;
-			i++;
-		}
 		else if (str[i] == '%' && i + 1!= ft_strlen(str))
 		{
 
@@ -58,14 +54,14 @@ int main()
 	hex = "0123456789abcdef";
 	//ft_putstr(ft_itoa_base(-45, 16, hex));
 	char a[3] = "sd";
-	//ft_printf("{%.o}", "qwert");
+	//ft_printf("{%}");
 	//ft_printf("\nmy :%u", 45);
 	//ft_printf("\n1my:{%12d}", 45);
-	printf("\n1or:{%%% Hello!}, 12\n");
+	//printf("\n1or:{%Hello!}, 12\n", "sa");
 //
-//	ft_printf("\nmy:{%12d}", -45);
-//	printf("\nor:{%12d}\n", -45);
-//
+	ft_printf("\nmy:{%d}", 0);
+	printf("\nor:{%12d}\n", -45);
+
 //	ft_printf("\n2my:{%012d}", 45);
 //	printf("\n2or:{%012d}\n", 45);
 //
