@@ -4,7 +4,7 @@
 
 #include "ft_printf.h"
 
-int count(unsigned long int arg, int base)
+int count(uintmax_t arg, int base)
 {
 	int i;
 
@@ -23,19 +23,19 @@ int check_biggest(int a, int b, int c)
 		return a;
 	if ((b >= a && a >= c) || (b >= c && c >= a))
 		return b;
-	if ((c >= a && a >= b) || (c >= b && a >= a))
+	if ((c >= a && a >= b) || (c >= b && b >= a))
 		return c;
 	return 0;
 }
 
-int length_of_a(t_var all, void *arg, int *base)
+int length_of_a(t_var all, uintmax_t arg, int *base)
 {
 	int t;
 
 	t = 0;
 	if ((int) arg < 0)
 	{
-		arg = -(int)arg;
+		arg = -arg;
 		t++;
 	}
 	if (all.type == 's')

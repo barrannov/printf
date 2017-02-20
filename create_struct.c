@@ -46,7 +46,7 @@ t_var create_struct(int *i, char *str, t_var all)
 		all.type = '%';
 		return all;
 	}
-	if (check_flag(str[*(i)], str[*i - 1]))
+	if (check_flag(str[*(i)]))
 		all = create_flags(str, i, all);
 	if (is_digit(str[*i]))
 		all.width = create_numbers(str, i);

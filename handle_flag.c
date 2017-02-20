@@ -28,7 +28,7 @@ void check_override(t_var *all )
 		all->hash = 0;
 }
 
-int check_flag(char c, char b)
+int check_flag(char c)
 {
 	int i;
 

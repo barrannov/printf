@@ -20,7 +20,7 @@ int check_type(char c)
 	return (0);
 }
 
-void handle_type(char type, void *arg)
+void handle_type(char type, uintmax_t arg)
 {
 	char *hex;
 
@@ -29,12 +29,12 @@ void handle_type(char type, void *arg)
 		arg = -(int)arg;
 	if (type == 's')
 	{
-		ft_putstr(arg);
+		ft_putstr((char *)arg);
 	}
 	else if (type == 'p')
 	{
 		ft_putstr((const char *) "0x");
-		ft_putstr((const char *) *(ft_itoa_base(arg, 16, hex)));
+		ft_putstr((const char *) (ft_itoa_base(arg, 16, hex)));
 	}
 	if (type == 'd' || type == 'i')
 	{

@@ -36,12 +36,12 @@ char *move_one(char *str)
 	return (str);
 }
 
-void *put_m_or_p(t_var *all, void *arg, int len_of_num, int *len_r)
+uintmax_t put_m_or_p(t_var *all, uintmax_t arg, int len_of_num, int *len_r)
 {
-	int a = (int)arg;
+
 	if ((int) arg < 0 && ((all->null == 1 || len_of_num == *len_r)))
 	{
-		a = -(int) arg;
+		arg = -arg;
 		ft_putchar('-');
 		all->plus = 0;
 	}
@@ -53,15 +53,15 @@ void *put_m_or_p(t_var *all, void *arg, int len_of_num, int *len_r)
 	}
 	if (all->plus)
 		(*len_r)--;
-	return a;
+	return arg;
 }
 
 
-void start_fill_res(int len_r, t_var all, void *arg, int base)
+void start_fill_res(int len_r, t_var all, uintmax_t arg, int base)
 {
 	int i;
 	char nul;
-	char *str;
+//	char *str;
 	char *hex;
 
 	hex = "0123456789abcdef";
@@ -106,7 +106,7 @@ void start_fill_res(int len_r, t_var all, void *arg, int base)
 			all.hash= 0;
 		}
 
-		while (len_r > len_of_num)
+		while (len_r > len_of_num )
 		{
 			ft_putchar(nul);
 			len_r--;
@@ -115,13 +115,13 @@ void start_fill_res(int len_r, t_var all, void *arg, int base)
 	if (arg != NULL)
 	{
 		arg = put_m_or_p(&all, arg, len_of_num, &len_r);
-		if(all.space == 1 && (int)arg > 0)
+		if(all.space == 1 && (uintmax_t)arg > 0)
 		{
 			ft_putchar(' ');
 			len_r--;
 			all.space = 0;
 		}
-		if (all.plus == 1 && (int)arg > 0)
+		if (all.plus == 1 && arg > 0)
 		{
 			ft_putchar('+');
 			all.plus = 0;
@@ -145,7 +145,7 @@ void start_fill_res(int len_r, t_var all, void *arg, int base)
 			ft_putchar('0');
 			pres--;
 		}
-		handle_type(all.type, (int) arg);
+		handle_type(all.type, (int)arg);
 		arg = NULL;
 		len_r -= len_of_num;
 		all.min = 0;
@@ -154,7 +154,7 @@ void start_fill_res(int len_r, t_var all, void *arg, int base)
 		return start_fill_res(len_r, all, arg, base);
 }
 
-long long cast(t_var all, void *temp)
+uintmax_t cast(t_var all, uintmax_t temp)
 {
 	if (all.size == 1)
 		return (unsigned char) temp;
@@ -162,19 +162,19 @@ long long cast(t_var all, void *temp)
 		return (unsigned short) temp;
 	if (all.size == 3)
 		return (long) temp;
-	return ((long long) temp);
+	return (temp);
 }
 
 void go_through_struct(t_var all, va_list arg)
 {
 	/*1. Check parameters
 	 *etc*/
-	void *temp;
+	uintmax_t temp;
 	int t;
 	int base;
-	char *str;
-	temp = va_arg(arg, void *);
-	temp = (void *) cast(all, temp);
+//	char *str;
+	temp = (uintmax_t)va_arg(arg, void *);
+	temp =  cast(all, temp);
 //ft_putnbr(temp);
 	base = 10;
 	t = length_of_a(all, temp, &base);
