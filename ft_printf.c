@@ -12,31 +12,40 @@ int ft_printf(char *str, ...)
 	t_var all;
 	va_start(myl, str);
 
+	all.var = 0;
 	i = 0;
 	while (str[i])
 	{
 		free_struct(&all);
 		if (str[i] == '%' && str[i + 1] == '%' && (i++))
+		{
+			all.var++;
 			write(1, "%", 1);
+		}
 		else if (str[i] == '%' && (size_t)(i + 1) != ft_strlen(str))
 		{
 
 			i++;
 			all = create_struct(&i, str, all);
-
-			if(all.type != '%')
-				go_through_struct(all, myl);
+	printf("%d\n", all.null);
+			if (all.type != '%')
+				all = go_through_struct(all, myl);
 			else
+			{
+				all.var++;
 				write(1, "%", 1);
+			}
 		}
 		else
 		{
+			all.var++;
 			write(1, &str[i], 1);
 		}
 		i++;
 	}
 	va_end(myl);
-	return 0;
+	//printf("var : %d\n", all.var -1);
+	return all.var;
 }
 
 
@@ -58,15 +67,17 @@ int main()
 	//ft_printf("\nmy :%u", 45);
 	//ft_printf("\n1my:{%12d}", 45);
 //	printf("\n% d\n", -15);
+
+	//ft_printf("\nmy:{%5%}", 14);
+	//1printf("\nor:{%14.10d}\n", 14);
+
 //
-	ft_printf("\nmy:{%14.3d}", -14);
-	printf("\nor:{%14.3d}\n", -14);
 
+	//ft_printf("%u", 4294967295);
+//	printf("\n2or:{%0122d}\n", 45);
+	ft_printf("%.012d", 13);
 
-	ft_printf("\n2my:{%0122d}", 45);
-	printf("\n2or:{%0122d}\n", 45);
-
-	ft_printf("\nmy:{%012d}", -45);
+	printf("\n{%.1s}", "www");
 	printf("\nor:{%012d}\n", -45);
 
 	ft_printf("\n3my:{% 012d}", 45);
@@ -95,10 +106,10 @@ int main()
 
 	ft_printf("\n7my:{%-+#12x}", 45);
 	printf("\n7or:{%-+#12x}\n", 45);
-//
-//
-//	ft_printf("\nmy:%ho", -12);
-//	printf("\nor:{%ho}\n", -12);
-//	//printf("%i", 1223456);
+
+
+	ft_printf("\nmy:%ho", -12);
+	printf("\nor:{%ho}\n", -12);
+	//printf("%i", 1223456);
 	return 0;
 }

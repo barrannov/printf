@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "inttypes.h"
 
+
 typedef struct	s_var
 {
     char parameter;
@@ -16,13 +17,14 @@ typedef struct	s_var
     int precision;
     int size;
     char type;
+	int var;
 } t_var;
 
 
 //char	*ft_itoa_base(unsigned long int value, int base, char *hex);
 char	*ft_itoa_base( uintmax_t value, int base, char *hex);
 t_var create_struct(int *i, char *str, t_var all);
-void go_through_struct(t_var all, va_list arg);
+t_var go_through_struct(t_var all, va_list arg);
 void free_struct(t_var *strc);
 void handle_type(char type, uintmax_t arg);
 int check_type(char c);

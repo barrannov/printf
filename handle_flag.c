@@ -46,7 +46,7 @@ t_var create_flags(char *str, int *i, t_var all)
 {
 
 
-	if(str[*i] == '0' && !is_digit(str[*i - 1]) && str[*i - 1] != '.')
+	if(str[*i] == '0' && !is_digit(str[*i - 1]))
 		all.null = 1;
 	if(str[*i] == '#')
 		all.hash = 1;

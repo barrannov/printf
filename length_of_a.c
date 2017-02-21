@@ -35,9 +35,10 @@ int length_of_a(t_var all, uintmax_t arg, int *base)
 	t = 0;
 	if ((int) arg < 0)
 	{
-		arg = -arg;
+		arg = (int)-arg;
 		t++;
 	}
+
 	if (all.type == 's')
 		t = ((int) ft_strlen((char *) arg));
 	else if (all.type == 'p')
@@ -54,5 +55,6 @@ int length_of_a(t_var all, uintmax_t arg, int *base)
 		t = count(arg, *base = 16);
 	else if (all.type == 'c' || all.type == 'C')
 		t = 1;
+	//printf("len: %d        \n", t);
 	return t;
 }
