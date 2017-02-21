@@ -38,3 +38,8 @@ int length_of_a(t_var all, uintmax_t temp, int *base);
 int count(unsigned long int arg, int base);
 int check_biggest(int a, int b, int c);
 void *change_val_to_op(void * arg);
+
+
+
+
+int isgrop1(char c);

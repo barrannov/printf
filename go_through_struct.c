@@ -198,6 +198,23 @@ t_var go_through_struct(t_var all, va_list arg)
 //	char *str;
 	temp = va_arg(arg, uintmax_t);
 	temp = cast(all, temp);
+
+
+	if(isgrop1(all.type))
+	{
+
+	}
+
+
+
+
+
+
+
+
+
+
+
 //ft_putnbr(temp);
 	base = 10;
 	t = length_of_a(all, temp, &base);
