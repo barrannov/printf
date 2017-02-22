@@ -27,7 +27,6 @@ int ft_printf(char *str, ...)
 
 			i++;
 			all = create_struct(&i, str, all);
-	printf("%d\n", all.null);
 			if (all.type != '%')
 				all = go_through_struct(all, myl);
 			else
@@ -72,12 +71,22 @@ int main()
 	//1printf("\nor:{%14.10d}\n", 14);
 
 //
+//	uintmax_t a;
+//
+//	a = (uintmax_t)-45;
+//
+//	if((long long)a < 0)
+//		a = (uintmax_t)-a;
+//	printf("%d\n", count(a, 10));
+//	printf("%lli", -112121212122);
+//	ft_putnbr(21142342342);
+
 
 	//ft_printf("%u", 4294967295);
-//	printf("\n2or:{%0122d}\n", 45);
-	ft_printf("%.012d", 13);
+	ft_printf("\n2my:{%d}\n", -45);
+	printf("\n2or:{%d}\n", -45);
 
-	printf("\n{%.1s}", "www");
+	printf("\nmy:{%012d}",-45);
 	printf("\nor:{%012d}\n", -45);
 
 	ft_printf("\n3my:{% 012d}", 45);
@@ -103,13 +112,13 @@ int main()
 
 	ft_printf("\nmy:{%- 12d}", -45);
 	printf("\nor:{%- 12d}\n", -45);
-
-	ft_printf("\n7my:{%-+#12x}", 45);
-	printf("\n7or:{%-+#12x}\n", 45);
-
-
-	ft_printf("\nmy:%ho", -12);
-	printf("\nor:{%ho}\n", -12);
+//
+	//ft_printf("\n7my:{%-+#12x}", 45);
+	//printf("\n7or:{%-+#12x}\n", 45);
+//
+//
+//	ft_printf("\nmy:%ho", -12);
+//	printf("\nor:{%ho}\n", -12);
 	//printf("%i", 1223456);
 	return 0;
 }

@@ -18,6 +18,7 @@ typedef struct	s_var
     int size;
     char type;
 	int var;
+	int min_val;
 } t_var;
 
 
@@ -35,11 +36,16 @@ int check_size(char c);
 int create_size(char *str, int *i);
 t_var create_flags(char *str, int *i, t_var all);
 int length_of_a(t_var all, uintmax_t temp, int *base);
-int count(unsigned long int arg, int base);
 int check_biggest(int a, int b, int c);
 void *change_val_to_op(void * arg);
 
+void handle_1gr(t_var all, intmax_t arg);
 
+int count(uintmax_t arg, int base);
 
+intmax_t cast(int size, va_list arg);
 
 int isgrop1(char c);
+
+void print_w(int i);
+void print_z(int i);

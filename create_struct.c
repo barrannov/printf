@@ -29,7 +29,7 @@ int create_numbers(char *str, int *i)
 
 int check_precision(char c, char b)
 {
-	if (c == '.' && is_digit(b) && b > 48)
+	if (c == '.' && is_digit(b))
 		return (1);
 	return (0);
 }

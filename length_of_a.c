@@ -19,11 +19,11 @@ int count(uintmax_t arg, int base)
 
 int check_biggest(int a, int b, int c)
 {
-	if ((a >= b && b >= c) || (a >= c && c >= b))
+	if (a >= b && a >= c)
 		return a;
-	if ((b >= a && a >= c) || (b >= c && c >= a))
+	if (b >= a && b >= c)
 		return b;
-	if ((c >= a && a >= b) || (c >= b && b >= a))
+	if (c >= a && c >= b)
 		return c;
 	return 0;
 }
