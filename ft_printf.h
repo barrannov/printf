@@ -39,11 +39,11 @@ int length_of_a(t_var all, uintmax_t temp, int *base);
 int check_biggest(int a, int b, int c);
 void *change_val_to_op(void * arg);
 
-void handle_1gr(t_var all, intmax_t arg);
+t_var handle_1gr(t_var all, intmax_t arg);
 
 int count(uintmax_t arg, int base);
 
-intmax_t cast(int size, va_list arg);
+intmax_t cast(int size, va_list arg, t_var *all);
 
 int isgrop1(char c);
 

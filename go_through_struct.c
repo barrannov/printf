@@ -178,15 +178,15 @@ void start_fill_res(int len_r, t_var all, uintmax_t arg, int base)
 		return start_fill_res(len_r, all, arg, base);
 }
 
-intmax_t cast(int size, va_list arg)
+intmax_t cast(int size, va_list arg, t_var *all)
 {
-	void *temp;
+	intmax_t temp;
 
-	temp = va_arg(arg, void *);
+	temp = va_arg(arg, intmax_t);
 	if (size == 1)
-		return (unsigned char) temp;
+		return (char) temp;
 	if (size == 2)
-		return (unsigned short) temp;
+		return (short) temp;
 	if (size == 3)
 		return (long) temp;
 	return ((int) temp);
@@ -201,12 +201,11 @@ t_var go_through_struct(t_var all, va_list arg)
 	int base;
 //	char *str;
 //	temp = va_arg(arg, uintmax_t);
-	temp = cast(all.size, arg);
-
+	temp = cast(all.size, arg, &all);
 
 
 	if (isgrop1(all.type))
-		handle_1gr(all, temp);
+		all = handle_1gr(all, temp);
 
 
 

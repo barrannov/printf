@@ -43,12 +43,12 @@ int ft_printf(char *str, ...)
 		i++;
 	}
 	va_end(myl);
-	//printf("var : %d\n", all.var -1);
+	//printf("var : %d\n", all.var);
 	return all.var;
 }
 
 
-int main()
+int manin()
 {
 //	t_var aa;
 
@@ -70,7 +70,7 @@ int main()
 	//ft_printf("\nmy:{%5%}", 14);
 	//1printf("\nor:{%14.10d}\n", 14);
 
-//
+ft_printf("%+d", -42);
 //	uintmax_t a;
 //
 //	a = (uintmax_t)-45;
@@ -83,17 +83,23 @@ int main()
 
 
 	//ft_printf("%u", 4294967295);
-	ft_printf("\n2my:{%d}\n", -45);
-	printf("\n2or:{%d}\n", -45);
+//	ft_printf("%d\n", 2147483648);
+//	printf("%d\n",2147483648);
+//	ft_printf("\n2my:{% 6+-.4d}\n", -45);
+//	printf("\n2or:{% 6+-.4d}\n", -45);
+//
+//	printf("%d\n", ft_printf("%d", 2147483648));
+	ft_printf("\n%10.5d", 4242);
 
+	//printf("%d", printf("%d", 2147483648));
 	printf("\nmy:{%012d}",-45);
 	printf("\nor:{%012d}\n", -45);
-
+//
 	ft_printf("\n3my:{% 012d}", 45);
 	printf("\n3or:{% 012d}\n", 45);
 
-	ft_printf("\nmy:{% 012d}", -45);
-	printf("\nor:{% 012d}\n", -45);
+	ft_printf("\nmy:{% 12d}", -45);
+	printf("\nor:{% 12d}\n", -45);
 
 	ft_printf("\n4my:{%+012d}", 45);
 	printf("\n4or:{%+012d}\n", 45);
@@ -112,9 +118,9 @@ int main()
 
 	ft_printf("\nmy:{%- 12d}", -45);
 	printf("\nor:{%- 12d}\n", -45);
-//
-	//ft_printf("\n7my:{%-+#12x}", 45);
-	//printf("\n7or:{%-+#12x}\n", 45);
+
+	ft_printf("\n7my:{%-+#12x}", 45);
+	printf("\n7or:{%-+#12x}\n", 45);
 //
 //
 //	ft_printf("\nmy:%ho", -12);
