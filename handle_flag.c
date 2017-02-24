@@ -5,7 +5,7 @@
 
 #include "ft_printf.h"
 
-void check_override(t_var *all)
+void check_override(t_var *all )
 {
 	if (all->min == 1 && all->null == 1)
 		all->null = 0;
@@ -15,6 +15,10 @@ void check_override(t_var *all)
 		all->null = 0;
 	if (all->width == 0 || all->width == all->precision)
 		all->min = 0;
+/*	if(all->width > 0 && (all->null == 0))
+		all->space = 0;*/
+	if(all->type != 'd' && all->type != 'i')
+		all->plus = 0;
 	if (all->type != 'd' && all->type != 'i')
 	{
 		all->plus = 0;
@@ -24,7 +28,7 @@ void check_override(t_var *all)
 		all->hash = 0;
 }
 
-int check_flag(char c, char b)
+int check_flag(char c)
 {
 	int i;
 
@@ -42,7 +46,7 @@ t_var create_flags(char *str, int *i, t_var all)
 {
 
 
-	if(str[*i] == '0' && !is_digit(str[*i - 1]) && str[*i - 1] != '.')
+	if(str[*i] == '0' && !is_digit(str[*i - 1]))
 		all.null = 1;
 	if(str[*i] == '#')
 		all.hash = 1;

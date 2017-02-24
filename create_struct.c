@@ -29,7 +29,7 @@ int create_numbers(char *str, int *i)
 
 int check_precision(char c, char b)
 {
-	if (c == '.' && is_digit(b))
+	if (c == '.' && is_digit(b) && b > 48)
 		return (1);
 	return (0);
 }
@@ -46,7 +46,7 @@ t_var create_struct(int *i, char *str, t_var all)
 		all.type = '%';
 		return all;
 	}
-	if (check_flag(str[*(i)], str[*i - 1]))
+	if (check_flag(str[*(i)]))
 		all = create_flags(str, i, all);
 	if (is_digit(str[*i]))
 		all.width = create_numbers(str, i);
@@ -59,7 +59,6 @@ t_var create_struct(int *i, char *str, t_var all)
 	if (check_size(str[*i]))
 	{
 		all.size = (temp = create_size(str, i)) > all.size ? temp : all.size;
-		printf("\nsuize  :%d", all.size);
 	}
 	if (check_type(str[*i]))
 	{

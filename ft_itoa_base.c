@@ -5,27 +5,29 @@
 #include "printf.h"
 #include "stdlib.h"
 
-char	*ft_itoa_base(long long value, int base, char *hex)
+char	*ft_itoa_base( uintmax_t value, int base, char *hex)
 {
-    int		i;
-    long long		n;
-    char	*s;
+    int			i;
+	uintmax_t	n;
+    char		*s;
+	uintmax_t a;
 
-    i = (value < 0 && base == 10) ? 2 : 1;
+	a = 0;
+    i = (value < a && base == 10) ? 2 : 1;
     n = value;
     while (n /= base)
         i++;
     if ((s = (char*)malloc(sizeof(char) * i + 1)) == 0)
         return (NULL);
     s[i] = 0;
-    if (value < 0 && base == 10)
+    if (value < a && base == 10)
         s[0] = '-';
     if (value == 0)
         s[0] = '0';
     n = value;
     while (n)
     {
-        s[--i] = hex[(n < 0) ? -(n % base) : n % base];
+        s[--i] = hex[(n < a) ? -(n % base) : n % base];
         n /= base;
     }
     return (s);

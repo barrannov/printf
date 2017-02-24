@@ -11,6 +11,7 @@ void free_struct(t_var *strc)
 	strc->width = 0;
 	strc->precision = 0;
 	strc->size = 0;
+	strc->plus = 0;
 	strc->type = (char) NULL;
 }
 
@@ -21,113 +22,212 @@ void free_struct(t_var *strc)
 //DONE create funcs in  separate file that return length of arg
 //
 
-
-char *move_one(char *str) {
+char *move_one(char *str)
+{
 	int i;
 
 	i = 0;
 	while (str[i])
 	{
-		str[i] = str[i+1];
+		str[i] = str[i + 1];
 		i++;
 	}
-	return  str;
+	str[i] = '\0';
+	return (str);
 }
 
-char *start_fill_res(char *res, int len_r, t_var all, void *arg)
+void put_m_or_p(t_var *all, uintmax_t *arg, int len_of_num, int *len_r)
+{
+
+	if ( (int)arg < 0 && ((all->null == 1 || len_of_num == *len_r)))
+	{
+		*arg *= (uintmax_t)1;
+		ft_putchar('-');
+		all->plus = 0;
+	}
+	else if (all->plus == 1 && (all->null == 1 || len_of_num == *len_r))
+	{
+		ft_putchar('+');
+		(*len_r)--;
+		all->plus = 0;
+	}
+	if (all->plus)
+		(*len_r)--;
+}
+
+
+void start_fill_res(int len_r, t_var all, uintmax_t arg, int base)
 {
 	int i;
 	char nul;
-	char *str;
+//	char *str;
+	char *hex;
 
-	str = ft_itoa( arg);
+	hex = "0123456789abcdef";
+//	str = ft_itoa(arg);
 
 	nul = ' ';
 	i = 0;
-	int temp;
- //printf("\nstr - %s", str);
-	temp = ft_strlen(str);
+	int len_of_num;
 
+	len_of_num = length_of_a(all, arg, &base);
+	int pres;
+
+	pres = 0;
+
+	if (all.precision > len_of_num)
+	{
+		pres = all.precision - len_of_num;
+		len_r -= pres;
+
+	}
+	if ((int) arg < 0)
+	{
+		all.space = 0;
+
+	}
+
+	//printf("%d\n", len_of_num);
+	//printf("len_r :  %d\n", len_r);
+	//printf("len_of_num :  %d\n", len_of_num);
 	if (all.min == 0)
 	{
 
-		if (all.space == 1)
+		put_m_or_p(&all, &arg, len_of_num, &len_r);
+
+		if (all.null)
 		{
-			res[i++] = ' ';
+			nul = '0';
+			all.null = 0;
+		}
+		if(all.space == 1 && (int)arg > 0)
+		{
+			ft_putchar(' ');
+			len_r--;
 			all.space = 0;
 		}
-		if (str[0] =='0' && (all.type == 'd' ||all.type == 'i') && all.null == 1) {
-			res[i++] = '-';
-			str = move_one(str);
-			len_r++;
-		}
-		if (all.plus == 1 && (int) arg > 0 && all.null == 1)
+		if(all.hash == 1 && all.type == 'o')
 		{
-			res[i++] = '+';
+			ft_putstr("0");
+			len_r--;
+			all.hash= 0;
+		}
+		if(all.hash == 1 && (all.type == 'x' || all.type == 'X'))
+		{
+			ft_putstr("0x");
+			len_r -= 2;
+			all.hash= 0;
+		}
+
+		while (len_r > len_of_num)
+		{
+			ft_putchar(nul);
+			len_r--;
+		}
+	}
+//	printf("pres :  %d\n", pres);
+
+	if (arg != '\0')
+	{
+		put_m_or_p(&all, &arg, len_of_num, &len_r);
+
+		if (all.space == 1 && (uintmax_t) arg > 0)
+		{
+			ft_putchar(' ');
+			len_r--;
+			all.space = 0;
+		}
+		if (all.plus == 1 && (uintmax_t)arg > 0)
+		{
+			ft_putchar('+');
 			all.plus = 0;
 		}
-		if (all.null == 1)
-			nul = '0';
-		while (i < len_r - temp)
+		if ( (int)arg < 0)
 		{
-			res[i] = nul;
-			i++;
+			ft_putchar('-');
+			arg *= 1;
+		}
+		if(all.hash == 1 && all.type == 'o')
+		{
+			ft_putstr("0");
+			len_r--;
+			all.hash= 0;
+		}
+		if(all.hash == 1 && (all.type == 'x' || all.type == 'X'))
+		{
+			ft_putstr("0x");
+			len_r -= 2;
+			all.hash= 0;
 		}
 
-	}
-
-
-//i--;
-	//if(all.null)
-	temp = 0;
-
-	if (all.space == 1)
-		res[i++] = ' ';
-	if (str[0] =='0' && (all.type == 'd' ||all.type == 'i')) {
-		res[i++] = '-';
-		str =  move_one(str);
-		len_r++;
-	}
-    if (all.hash == 1)
-    {
-        res[i++] = '0';
-        res[i++] = 'x';
-    }
-	if (all.plus == 1 && (int) arg > 0)
-		res[i++] = '+';
-	while (str[temp])
-	{
-
-		res[i] = str[temp];
-		temp++;
-		i++;
-	}
-	if (all.min == 1)
-	{
-		while (i < len_r)
+		while (pres)
 		{
-			res[i] = nul;
-			i++;
+			ft_putchar('0');
+			pres--;
 		}
+
+
+		handle_type(all.type, arg);
+
+		arg = '\0';
+		len_r -= len_of_num;
+		all.min = 0;
 	}
-	return res;
+	if (len_r > 0)
+		return start_fill_res(len_r, all, arg, base);
 }
 
-void go_through_struct(t_var all, va_list arg)
+uintmax_t cast(t_var all, uintmax_t temp)
+{
+	if (all.size == 1)
+		return (unsigned char) temp;
+	if (all.size == 2)
+		return (unsigned short) temp;
+	if (all.size == 3)
+		return (long) temp;
+	return (temp);
+}
+
+t_var go_through_struct(t_var all, va_list arg)
 {
 	/*1. Check parameters
 	 *etc*/
-	char *res;
-	void *temp;
+	uintmax_t temp;
 	int t;
+	int base;
+//	char *str;
+	temp = va_arg(arg, uintmax_t);
+	temp = cast(all, temp);
 
-	temp = va_arg(arg, void *);
-//	printf("\nsuize  :%d", all.size);
-	all.size == 1 ? temp = (char) temp : 0;
-	all.size == 2 ? temp = (short) temp : 0;
-	all.size == 3 ? temp = (long) temp : 0;
-	//ft_putnbr(temp);
-	t = length_of_a(all, temp);
+
+	if(isgrop1(all.type))
+	{
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+//ft_putnbr(temp);
+	base = 10;
+	t = length_of_a(all, temp, &base);
+	t = check_biggest(all.width, all.precision, t);
+	if (all.type == 's')
+	{
+		ft_putstr((char *)temp);
+		return all;
+	}
+	//printf("t: %d\n", t);
+	all.var += t;
+	//printf("t: %d\n", t);
+	//printf("\nbase:%d", base);
 	//Минус не сработает если поле меньшн числа
 //	printf(" t: %d", t);
 	if (t > all.width)
@@ -143,8 +243,11 @@ void go_through_struct(t_var all, va_list arg)
 	printf("  precision: {%d}", all.precision);
 	printf("  size: {%d}", all.size);
 	printf("  type: {%c}|      ", all.type);*/
-	res = ft_strnew(t);
-	res = start_fill_res(res, t, all, temp);
-	ft_putstr(res);
+//	res = ft_strnew(t);
+	//str = char_to_n(all, base, temp);
+//	printf("%s", str);
+	//Сдесь можно создать нули для пресижион и джоин
+	start_fill_res(t, all, temp, base);
 	//handle_type(all.type, temp);
+	return all;
 }
