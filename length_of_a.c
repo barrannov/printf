@@ -28,31 +28,27 @@ int check_biggest(int a, int b, int c)
 	return 0;
 }
 
-int length_of_a(t_var all, uintmax_t arg, int *base)
+int length_of_a(t_var all, uintmax_t arg)
 {
 	int t;
 
 	t = 0;
-	if ((int) arg < 0)
-	{
-		arg = (int)-arg;
-		t++;
-	}
+
 
 	if (all.type == 's')
 		t = ((int) ft_strlen((char *) arg));
 	else if (all.type == 'p')
-		t = (count(arg, *base = 16) + 2);
+		t = (count(arg,  16) + 2);
 	else if (all.type == 'd' || all.type == 'i')
-		t += count(arg, *base = 10);
+		t += count(arg,  10);
 	else if (all.type == 'o' || all.type == 'O')
-		t = count(arg, *base = 8);
+		t = count(arg, 8);
 	else if (all.type == 'u')
-		t = count((unsigned int) arg, *base = 10);
+		t = count((unsigned int) arg, 10);
 	else if (all.type == 'U')
-		t = count((unsigned long) arg, *base = 10);
+		t = count((unsigned long) arg,10);
 	else if (all.type == 'X' || all.type == 'x')
-		t = count(arg, *base = 16);
+		t = count((unsigned long)arg, 16);
 	else if (all.type == 'c' || all.type == 'C')
 		t = 1;
 	//printf("len: %d        \n", t);

@@ -15,7 +15,8 @@ SRC =   ft_printf.c \
 		ft_itoa_base.c \
 		print.c \
 		handle_1_gr.c \
-		handle_2gr.c \
+		handle_2_gr.c \
+		handle_else_gr.c \
 		groups.c \
 		create_struct.c
 

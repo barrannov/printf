@@ -5,6 +5,7 @@
 #include "ft_printf.h"
 
 
+
 int ft_printf(char *str, ...)
 {
 	int i;
@@ -48,85 +49,9 @@ int ft_printf(char *str, ...)
 }
 
 
-int mai;n()
+int mjain()
 {
-//	t_var aa;
-
-	/* aa.type = 'w';
-	 printf("%c\n", aa.type);
-	 if(aa.type)
-	 printf("%c\n", aa.type);
-	*/
-	char *hex;
-//
-	hex = "0123456789abcdef";
-	//ft_putstr(ft_itoa_base(-45, 16, hex));
-//	char a[3] = "sd";
-	//ft_printf("{%}");
-	//ft_printf("\nmy :%u", 45);
-	//ft_printf("\n1my:{%12d}", 45);
-//	printf("\n% d\n", -15);
-
-	//ft_printf("\nmy:{%5%}", 14);
-	//1printf("\nor:{%14.10d}\n", 14);
-
-	printf("\n%d\n", ft_printf("%0+5d", -42));
-	printf("\n%d\n", printf("%0+5d", -42));
-
-//	uintmax_t a;
-//
-//	a = (uintmax_t)-45;
-//
-//	if((long long)a < 0)
-//		a = (uintmax_t)-a;
-//	printf("%d\n", count(a, 10));
-//	printf("%lli", -112121212122);
-//	ft_putnbr(21142342342);
-
-
-	//ft_printf("%u", 4294967295);
-	//ft_printf("%d\n", 2147483648);
-	//printf("%d\n",2147483648);
-	//ft_printf("\n2my:{% 6+-.4d}\n", -45);
-	//printf("\n2or:{% 6+-.4d}\n", -45);
-
-//	printf("%d\n", ft_printf("%d", 2147483648));
-	//ft_printf("\n%10.5d", -42);
-
-//	printf("%d", printf("%d", 2147483648));
-//	printf("\nmy:{%012d}",-45);
-//	printf("\nor:{%012d}\n", -45);
-////
-//	ft_printf("\n3my:{% 012d}", 45);
-//	printf("\n3or:{% 012d}\n", 45);
-//
-//	ft_printf("\nmy:{% 12d}", -45);
-//	printf("\nor:{% 12d}\n", -45);
-//
-//	ft_printf("\n4my:{%+012d}", 45);
-//	printf("\n4or:{%+012d}\n", 45);
-//
-//	ft_printf("\nmy:{%+012d}", -45);
-//	printf("\nor:{%+012d}\n", -45);
-//
-//	ft_printf("\n5my:{%12d}", 45);
-//	printf("\n5or:{%12d}\n", 45);
-//
-//	ft_printf("\nmy:{%-12d}", -45);
-//	printf("\nor:{%-12d}\n", -45);
-//
-//	ft_printf("\n6my:{%- 12d}", 45);
-//	printf("\n6or:{%- 12d}\n", 45);
-//
-//	ft_printf("\nmy:{% 012d}", -45);
-//	printf("\nor:{% 012d}\n", -45);
-
-//	ft_printf("\n7my:{%-+#12x}", 45);
-//	printf("\n7or:{%-+#12x}\n", 45);
-//
-//
-//	ft_printf("\nmy:%ho", -12);
-//	printf("\nor:{%ho}\n", -12);
-	//printf("%i", 1223456);
+	printf("\n%d\n", ft_printf("%X", 4294967296));
+	printf("\n%d\n", printf("%X", 4294967296));
 	return 0;
 }

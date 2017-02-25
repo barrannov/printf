@@ -27,8 +27,8 @@ void handle_type(char type, uintmax_t arg)
 
 	hex = "0123456789abcdef";
 	//ft_putnbr((unsigned)arg);
-	if ( (int)arg < 0)
-		arg *= 1;
+//	if ( (int)arg < 0)
+//		arg *= 1;
 	if (type == 's')
 	{
 		ft_putstr((char *)arg);
@@ -53,10 +53,10 @@ void handle_type(char type, uintmax_t arg)
 	else if (type == 'X')
 	{
 		hex = "0123456789ABCDEF";
-		ft_putstr(ft_itoa_base(arg, 16, hex));
+		ft_putstr(ft_itoa_base((unsigned long)arg, 16, hex));
 	}
 	else if (type == 'x')
-		ft_putstr(ft_itoa_base(arg, 16, hex));
+		ft_putstr(ft_itoa_base((unsigned long)arg, 16, hex));
 	else if (type == 'c' || type == 'C')
 		ft_putchar(arg);
 }

@@ -4,7 +4,7 @@
 
 #include "ft_printf.h"
 
-t_var handle_2gr(t_var all, va_list arg)
+t_var handle_else_gr(t_var all, va_list arg)
 {
 
 	//printf("\n%s", arg);

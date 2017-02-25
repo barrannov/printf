@@ -2,7 +2,7 @@
 // Created by Aleksandr Baranov on 2/22/17.
 //
 
-#include "libft1/libft.h"
+#include "libft/libft.h"
 
 void print_w(int i)
 {

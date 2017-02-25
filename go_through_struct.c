@@ -71,7 +71,7 @@ void start_fill_res(int len_r, t_var all, uintmax_t arg, int base)
 	i = 0;
 	int len_of_num;
 
-	len_of_num = length_of_a(all, arg, &base);
+//	len_of_num = length_of_a(all, arg, &base);
 	int pres;
 
 	pres = 0;
@@ -205,8 +205,10 @@ t_var go_through_struct(t_var all, va_list arg)
 
 	if (isgrop1(all.type))
 		all = handle_1gr(all, arg);
-	else
+	else if (isgrop2(all.type))
 		all = handle_2gr(all, arg);
+	else
+		all = handle_else_gr(all, arg);
 
 
 
