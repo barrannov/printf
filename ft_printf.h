@@ -39,7 +39,9 @@ int length_of_a(t_var all, uintmax_t temp, int *base);
 int check_biggest(int a, int b, int c);
 void *change_val_to_op(void * arg);
 
-t_var handle_1gr(t_var all, intmax_t arg);
+t_var handle_1gr(t_var all, va_list list);
+t_var handle_2gr(t_var all, va_list arg);
+
 
 int count(uintmax_t arg, int base);
 

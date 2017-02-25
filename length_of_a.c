@@ -8,7 +8,7 @@ int count(uintmax_t arg, int base)
 {
 	int i;
 
-	i = 0;
+	i = (arg == 0) ? 1 : 0;
 	while (arg > 0)
 	{
 		arg /= base;

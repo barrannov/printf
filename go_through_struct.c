@@ -181,7 +181,6 @@ void start_fill_res(int len_r, t_var all, uintmax_t arg, int base)
 intmax_t cast(int size, va_list arg, t_var *all)
 {
 	intmax_t temp;
-
 	temp = va_arg(arg, intmax_t);
 	if (size == 1)
 		return (char) temp;
@@ -201,11 +200,13 @@ t_var go_through_struct(t_var all, va_list arg)
 	int base;
 //	char *str;
 //	temp = va_arg(arg, uintmax_t);
-	temp = cast(all.size, arg, &all);
+	//temp = cast(all.size, arg, &all);
 
 
 	if (isgrop1(all.type))
-		all = handle_1gr(all, temp);
+		all = handle_1gr(all, arg);
+	else
+		all = handle_2gr(all, arg);
 
 
 

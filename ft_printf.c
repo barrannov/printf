@@ -43,12 +43,12 @@ int ft_printf(char *str, ...)
 		i++;
 	}
 	va_end(myl);
-	printf("var : %d\n", all.var);
-	return all.var;
+	//printf("var : %d\n", all.var);
+	return all.var ;
 }
 
 
-int mлain()
+int mai;n()
 {
 //	t_var aa;
 
@@ -70,7 +70,9 @@ int mлain()
 	//ft_printf("\nmy:{%5%}", 14);
 	//1printf("\nor:{%14.10d}\n", 14);
 
-ft_printf("%+d", -42);
+	printf("\n%d\n", ft_printf("%0+5d", -42));
+	printf("\n%d\n", printf("%0+5d", -42));
+
 //	uintmax_t a;
 //
 //	a = (uintmax_t)-45;
@@ -85,8 +87,8 @@ ft_printf("%+d", -42);
 	//ft_printf("%u", 4294967295);
 	//ft_printf("%d\n", 2147483648);
 	//printf("%d\n",2147483648);
-	ft_printf("\n2my:{% 6+-.4d}\n", -45);
-	printf("\n2or:{% 6+-.4d}\n", -45);
+	//ft_printf("\n2my:{% 6+-.4d}\n", -45);
+	//printf("\n2or:{% 6+-.4d}\n", -45);
 
 //	printf("%d\n", ft_printf("%d", 2147483648));
 	//ft_printf("\n%10.5d", -42);
