@@ -31,6 +31,16 @@ t_var start_output2(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
 			}
 			else if (all.min_val == 1)
 				ft_putchar('-');
+			if(all.hash == 1 && (all.type ==  'x' || all.type ==  'X') && arg > 0) {
+				ft_putstr("0");
+				all.hash = 0;
+					ft_putchar(all.type);
+
+			}
+			if(all.hash == 1 && (all.type ==  'o' || all.type ==  'O') ) {
+				all.hash = 0;
+					ft_putstr("0");
+			}
 			print_z(white_s + (all.min_val == 1 ? 0 : all.plus));
 			all.plus = 0;
 			all.min_val = 0;
@@ -64,13 +74,20 @@ uintmax_t cast2(int size, va_list arg, t_var *all)
 {
 	uintmax_t temp;
 	temp = va_arg(arg, uintmax_t);
+
+	if(all->type == 'U')
+		return  ((unsigned long)temp);
+
 	if (size == 1)
-		return (char) temp;
+		return (unsigned char) temp;
 	if (size == 2)
-		return (short) temp;
+	{
+		return (unsigned short) temp;
+}
 	if (size == 3)
-		return (long) temp;
-	return  ((unsigned)temp);
+		return (unsigned long) temp;
+	else
+		return  ((unsigned)temp);
 }
 
 

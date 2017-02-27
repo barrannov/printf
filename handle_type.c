@@ -47,7 +47,7 @@ void handle_type(char type, uintmax_t arg)
 	else if (type == 'O')
 		ft_putstr(ft_itoa_base(arg, 8, hex));
 	if (type == 'u')
-		ft_putnbr((unsigned)arg);
+		ft_putnbr((unsigned long)arg);
 	else if (type == 'U')
 		ft_putnbr((unsigned long) arg);
 	else if (type == 'X')

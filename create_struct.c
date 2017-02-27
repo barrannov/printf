@@ -29,7 +29,7 @@ int create_numbers(char *str, int *i)
 
 int check_precision(char c, char b)
 {
-	if (c == '.' && is_digit(b))
+	if (c == '.')
 		return (1);
 	return (0);
 }
@@ -52,8 +52,10 @@ t_var create_struct(int *i, char *str, t_var all)
 		all.width = create_numbers(str, i);
 	if (check_precision(str[*i], str[*i + 1]))
 	{
+		temp = 0;
 		(*i)++;
-		temp = create_numbers(str, i);
+		if(is_digit(str[*i]))
+			temp = create_numbers(str, i);
 		all.precision = temp;
 	}
 	if (check_size(str[*i]))

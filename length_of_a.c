@@ -44,7 +44,7 @@ int length_of_a(t_var all, uintmax_t arg)
 	else if (all.type == 'o' || all.type == 'O')
 		t = count(arg, 8);
 	else if (all.type == 'u')
-		t = count((unsigned int) arg, 10);
+		t = count((unsigned long) arg, 10);
 	else if (all.type == 'U')
 		t = count((unsigned long) arg,10);
 	else if (all.type == 'X' || all.type == 'x')
