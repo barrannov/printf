@@ -49,9 +49,9 @@ int ft_printf(char *str, ...)
 }
 
 
-int mjain()
+int main()
 {
-	printf("\n%d\n", ft_printf("%X", 4294967296));
-	printf("\n%d\n", printf("%X", 4294967296));
+//	printf("\n%d\n",ft_printf("%#8x", 42));
+	printf("\n%d\n", printf("%04.3s","12345"));
 	return 0;
 }

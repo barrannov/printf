@@ -24,7 +24,7 @@ void check_override(t_var *all )
 		all->plus = 0;
 		all->space = 0;
 	}
-	if(all->type != 'O' && all->type != 'o' && all->type != 'i' && all->type != 'x')
+	if(all->type != 'O' && all->type != 'o' && all->type != 'i' && all->type != 'x' && all->type != 'X')
 		all->hash = 0;
 	if(all->precision == -1)
 		all->precision = 0;

@@ -4,7 +4,7 @@
 #include "ft_printf.h"
 
 
-void start_output2(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
+t_var start_output2(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
 {
 	int pres;
 	int white_s;
@@ -42,6 +42,13 @@ void start_output2(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
 	all.space == 1 ? ft_putchar(' ') : 0;
 	all.plus == 1 && all.min_val == 0 ? ft_putchar('+') : 0;
 	all.min_val == 1 ? ft_putchar('-') : 0;
+	if(all.hash == 1 && (all.type ==  'x' || all.type ==  'X') && arg > 0) {
+		ft_putstr("0");
+		ft_putchar(all.type);
+	}
+	if(all.hash == 1 && (all.type ==  'o' || all.type ==  'O') ) {
+		ft_putstr("0");
+	}
 	print_z(pres);
 
 	//if(all.precision != 0)
@@ -49,6 +56,7 @@ void start_output2(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
 	handle_type(all.type, arg) ;
 	//print_w(apc);
 	print_w(white_s);
+	return all;
 }
 
 uintmax_t cast2(int size, va_list arg, t_var *all)
@@ -94,7 +102,7 @@ t_var handle_2gr(t_var all, va_list list)
 	len_of_f += check_biggest(all.width, all.precision  + (all.min_val || all.plus ? 1 : 0) + all.space,
 							  len_of_num + (all.min_val || all.plus ? 1 : 0) + all.space);
 	all.var += len_of_f;
-	start_output2(all, arg, len_of_num, len_of_f);
+	all = start_output2(all, arg, len_of_num, len_of_f);
 	//printf("len of n %d\n", len_of_num);
 	//printf("len of f %d\n", len_of_f);
 	return (all);

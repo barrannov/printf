@@ -51,6 +51,12 @@ int length_of_a(t_var all, uintmax_t arg)
 		t = count((unsigned long)arg, 16);
 	else if (all.type == 'c' || all.type == 'C')
 		t = 1;
+	if(all.hash == 1 && (all.type ==  'x' || all.type ==  'X') && arg > 0) {
+		t +=2;
+	}
+	if(all.hash == 1 && (all.type ==  'o' || all.type ==  'O') ) {
+		t ++;
+	}
 	//printf("len: %d        \n", t);
 	return t;
 }
