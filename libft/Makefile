@@ -30,7 +30,7 @@ OBJECTS =	ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o\
 			ft_strsub.o ft_strtrim.o ft_tolower.o ft_toupper.o\
 			ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstadd.o ft_lstiter.o\
 			ft_lstmap.o ft_amount_d.o full.o ft_count_l.o\
-			ft_count_w.o\
+			ft_count_w.o ft_strndup.o\
 
 SRC =	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c\
 		ft_isdigit.c ft_isprint.c ft_itoa.c ft_memalloc.c ft_memccpy.c\
@@ -46,7 +46,7 @@ SRC =	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c\
 		ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c\
 		ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c\
 		ft_lstmap.c ft_amount_d.c full.c ft_count_l.c\
-		ft_count_w.c\
+		ft_count_w.c ft_strndup.c\
 
 all : $(NAME)
 

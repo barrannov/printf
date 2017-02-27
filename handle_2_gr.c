@@ -45,6 +45,7 @@ t_var start_output2(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
 	if(all.hash == 1 && (all.type ==  'x' || all.type ==  'X') && arg > 0) {
 		ft_putstr("0");
 		ft_putchar(all.type);
+
 	}
 	if(all.hash == 1 && (all.type ==  'o' || all.type ==  'O') ) {
 		ft_putstr("0");

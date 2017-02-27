@@ -52,6 +52,7 @@ int ft_printf(char *str, ...)
 int main()
 {
 //	printf("\n%d\n",ft_printf("%#8x", 42));
-	printf("\n%d\n", printf("%04.3s","12345"));
+	//printf("\n%d\n", ft_printf("@moulitest: %s", NULL));
+	printf("\n%d\n", printf("@moulitest: %15s", NULL));
 	return 0;
 }
