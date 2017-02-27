@@ -18,6 +18,7 @@ SRC =   ft_printf.c \
 		handle_2_gr.c \
 		handle_else_gr.c \
 		groups.c \
+		handle_per.c \
 		create_struct.c
 
 HDR = ft_printf.h

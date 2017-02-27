@@ -54,6 +54,10 @@ ft_printf.h
 ft_printf.h
 /nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
 
+/nfs/2016/a/abaranov/projects/ft_printf/handle_per.c
+ft_printf.h
+/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+
 /nfs/2016/a/abaranov/projects/ft_printf/handle_size.c
 
 /nfs/2016/a/abaranov/projects/ft_printf/handle_type.c

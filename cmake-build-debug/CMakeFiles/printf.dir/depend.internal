@@ -33,6 +33,10 @@ CMakeFiles/printf.dir/handle_flag.c.o
  /nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
  /nfs/2016/a/abaranov/projects/ft_printf/handle_flag.c
  /nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+CMakeFiles/printf.dir/handle_per.c.o
+ /nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+ /nfs/2016/a/abaranov/projects/ft_printf/handle_per.c
+ /nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
 CMakeFiles/printf.dir/handle_size.c.o
  /nfs/2016/a/abaranov/projects/ft_printf/handle_size.c
 CMakeFiles/printf.dir/handle_type.c.o

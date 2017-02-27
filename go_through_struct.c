@@ -207,6 +207,8 @@ t_var go_through_struct(t_var all, va_list arg)
 		all = handle_1gr(all, arg);
 	else if (isgrop2(all.type))
 		all = handle_2gr(all, arg);
+	else if (all.type == '%')
+		all = handle_per(all, arg);
 	else
 		all = handle_else_gr(all, arg);
 

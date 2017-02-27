@@ -4,6 +4,15 @@
 #include "ft_printf.h"
 
 
+void neweverite(t_var *all, intmax_t arg)
+{
+	if(all->min_val == 1)
+		all->space = 0;
+	if(arg == NULL)
+		all->precision = 0;
+}
+
+
 t_var start_output2(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
 {
 	int pres;
@@ -13,7 +22,7 @@ t_var start_output2(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
 	apc = all.space;
 
 
-
+//	arg == NULL ? len_of_f-- : 0;
 	pres = (all.precision > len_of_num ? (all.precision - len_of_num) : 0);
 	white_s = len_of_f - pres - (len_of_num + (all.min_val == 1 || all.plus ? 1 : all.space));
 	//printf("pres: %d\n", white_s);
@@ -85,7 +94,7 @@ uintmax_t cast2(int size, va_list arg, t_var *all)
 		return (unsigned short) temp;
 }
 	if (size == 3)
-		return (unsigned long) temp;
+		return (long) temp;
 	else
 		return  ((unsigned)temp);
 }

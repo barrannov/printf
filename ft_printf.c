@@ -18,23 +18,23 @@ int ft_printf(char *str, ...)
 	while (str[i])
 	{
 		free_struct(&all);
-		if (str[i] == '%' && str[i + 1] == '%' && (i++))
-		{
-			all.var++;
-			write(1, "%", 1);
-		}
-		else if (str[i] == '%' && (size_t)(i + 1) != ft_strlen(str))
+//		if (str[i] == '%' && str[i + 1] == '%' && (i++))
+//		{
+//			all.var++;
+//			write(1, "%", 1);
+//		}
+		if (str[i] == '%' && (size_t)(i + 1) != ft_strlen(str))
 		{
 
 			i++;
 			all = create_struct(&i, str, all);
-			if (all.type != '%')
+			//if (all.type != '%')
 				all = go_through_struct(all, myl);
-			else
-			{
-				all.var++;
-				write(1, "%", 1);
-			}
+//			else
+//			{
+//				all.var++;
+//				write(1, "%", 1);
+//			}
 		}
 		else
 		{
@@ -52,7 +52,7 @@ int ft_printf(char *str, ...)
 int main()
 {
 //	printf("\n%d\n",ft_printf("%#8x", 42));
-	printf("\n%d\n",ft_printf("%"));
-	printf("\n%d\n", printf("%"));
+	printf("\n%d\n", ft_printf("%jx", 4294967295));
+	printf("\n%d\n", printf("%jx", 4294967295));
 	return 0;
 }

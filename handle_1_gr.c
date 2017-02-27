@@ -4,7 +4,7 @@
 
 #include "ft_printf.h"
 
-void neweverite(t_var *all, intmax_t arg)
+void neweverite1(t_var *all, intmax_t arg)
 {
 	if(all->min_val == 1)
 		all->space = 0;
@@ -14,10 +14,6 @@ void start_output(t_var all, intmax_t arg, int len_of_num, int len_of_f)
 {
 	int pres;
 	int white_s;
-	int apc;
-
-	apc = all.space;
-
 
 
 	pres = (all.precision > len_of_num ? (all.precision - len_of_num) : 0);
@@ -78,7 +74,7 @@ t_var handle_1gr(t_var all, va_list list)
 	}
 	//printf("\nmy: %lld", arg);
 	//return without minus
-	neweverite(&all, arg);
+	neweverite1(&all, arg);
 	len_of_num += count(arg, 10);
 	len_of_f += check_biggest(all.width, all.precision  + (all.min_val || all.plus ? 1 : 0) + all.space,
 							  len_of_num + (all.min_val || all.plus ? 1 : 0) + all.space);

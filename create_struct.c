@@ -40,13 +40,13 @@ t_var create_struct(int *i, char *str, t_var all)
 
 	int temp;
 
-	if (str[*i] == '%')
-	{
-		free_struct(&all);
-		all.type = '%';
-		return all;
-	}
-	else if (check_flag(str[*(i)]))
+//	if (str[*i] == '%')
+//	{
+//		free_struct(&all);
+//		all.type = '%';
+//		return all;
+//	}
+ if (check_flag(str[*(i)]))
 		all = create_flags(str, i, all);
 	else if (is_digit(str[*i]))
 		all.width = create_numbers(str, i);

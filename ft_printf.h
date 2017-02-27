@@ -44,8 +44,7 @@ void *change_val_to_op(void * arg);
 t_var handle_1gr(t_var all, va_list list);
 t_var handle_2gr(t_var all, va_list list);
 t_var handle_else_gr(t_var all, va_list arg);
-
-void neweverite(t_var *all, intmax_t arg);
+t_var handle_per(t_var all, va_list list);
 
 int count(uintmax_t arg, int base);
 t_var handle_1gr(t_var all, va_list list);

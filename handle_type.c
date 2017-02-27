@@ -9,7 +9,7 @@ int check_type(char c)
 	int i;
 
 	i = 0;
-	char type[15] = "sSpdDioOuUxXcC";
+	char type[15] = "sSpdDioOuUxXcC%";
 	while (type[i])
 	{
 		if (c == type[i])
@@ -57,6 +57,6 @@ void handle_type(char type, uintmax_t arg)
 	}
 	else if (type == 'x')
 		ft_putstr(ft_itoa_base((unsigned long)arg, 16, hex));
-	else if (type == 'c' || type == 'C')
+	else if ((type == 'c' || type == 'C') && arg != NULL)
 		ft_putchar(arg);
 }
