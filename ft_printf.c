@@ -49,10 +49,10 @@ int ft_printf(char *str, ...)
 }
 
 
-int magin()
+int main()
 {
 //	printf("\n%d\n",ft_printf("%#8x", 42));
-	printf("\n%d\n",ft_printf("@moulitest:%5.0o", 0));
-	printf("\n%d\n", printf("@moulitest:%5.o",0));
+	printf("\n%d\n",ft_printf("%"));
+	printf("\n%d\n", printf("%"));
 	return 0;
 }

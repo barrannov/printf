@@ -46,11 +46,11 @@ t_var create_struct(int *i, char *str, t_var all)
 		all.type = '%';
 		return all;
 	}
-	if (check_flag(str[*(i)]))
+	else if (check_flag(str[*(i)]))
 		all = create_flags(str, i, all);
-	if (is_digit(str[*i]))
+	else if (is_digit(str[*i]))
 		all.width = create_numbers(str, i);
-	if (check_precision(str[*i], str[*i + 1]))
+	else if (check_precision(str[*i], str[*i + 1]))
 	{
 		temp = 0;
 		(*i)++;
@@ -58,7 +58,7 @@ t_var create_struct(int *i, char *str, t_var all)
 			temp = create_numbers(str, i);
 		all.precision = temp;
 	}
-	if (check_size(str[*i]))
+	else if (check_size(str[*i]))
 	{
 		all.size = (temp = create_size(str, i)) > all.size ? temp : all.size;
 	}
