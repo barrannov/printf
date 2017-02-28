@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-static	long		min( long n)
+static	int		min(int n)
 {
 	if (n < 0)
 		n = -n;
 	return (n);
 }
 
-char			*ft_itoa(long n)
+char			*ft_itoa(long long n)
 {
 	char			*res;
-	long				len;
-	unsigned long	num;
+	int				len;
+	unsigned int	num;
 
 	len = 0;
 	len = ft_amount_d(n);

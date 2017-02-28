@@ -6,25 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/nfs/2016/a/abaranov/projects/ft_printf/create_struct.c
+/media/aleksandr/Диск/UNIT projects/printf/create_struct.c
 ft_printf.h
-/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+/media/aleksandr/Диск/UNIT projects/printf/ft_printf.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/ft_itoa_base.c
+/media/aleksandr/Диск/UNIT projects/printf/ft_itoa_base.c
 ft_printf.h
-/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+/media/aleksandr/Диск/UNIT projects/printf/ft_printf.h
 stdlib.h
-/nfs/2016/a/abaranov/projects/ft_printf/stdlib.h
+/media/aleksandr/Диск/UNIT projects/printf/stdlib.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.c
+/media/aleksandr/Диск/UNIT projects/printf/ft_printf.c
 ft_printf.h
-/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+/media/aleksandr/Диск/UNIT projects/printf/ft_printf.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+/media/aleksandr/Диск/UNIT projects/printf/ft_printf.h
 libft/libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 stdio.h
-/nfs/2016/a/abaranov/projects/ft_printf/stdio.h
+/media/aleksandr/Диск/UNIT projects/printf/stdio.h
 stdarg.h
 -
 stdlib.h
@@ -32,99 +32,99 @@ stdlib.h
 stdint.h
 -
 
-/nfs/2016/a/abaranov/projects/ft_printf/go_through_struct.c
+/media/aleksandr/Диск/UNIT projects/printf/go_through_struct.c
 ft_printf.h
-/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+/media/aleksandr/Диск/UNIT projects/printf/ft_printf.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/groups.c
+/media/aleksandr/Диск/UNIT projects/printf/groups.c
 
-/nfs/2016/a/abaranov/projects/ft_printf/handle_1_gr.c
+/media/aleksandr/Диск/UNIT projects/printf/handle_1_gr.c
 ft_printf.h
-/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+/media/aleksandr/Диск/UNIT projects/printf/ft_printf.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/handle_2_gr.c
+/media/aleksandr/Диск/UNIT projects/printf/handle_2_gr.c
 ft_printf.h
-/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+/media/aleksandr/Диск/UNIT projects/printf/ft_printf.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/handle_else_gr.c
+/media/aleksandr/Диск/UNIT projects/printf/handle_else_gr.c
 ft_printf.h
-/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+/media/aleksandr/Диск/UNIT projects/printf/ft_printf.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/handle_flag.c
+/media/aleksandr/Диск/UNIT projects/printf/handle_flag.c
 ft_printf.h
-/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+/media/aleksandr/Диск/UNIT projects/printf/ft_printf.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/handle_per.c
+/media/aleksandr/Диск/UNIT projects/printf/handle_per.c
 ft_printf.h
-/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+/media/aleksandr/Диск/UNIT projects/printf/ft_printf.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/handle_size.c
+/media/aleksandr/Диск/UNIT projects/printf/handle_size.c
 
-/nfs/2016/a/abaranov/projects/ft_printf/handle_type.c
+/media/aleksandr/Диск/UNIT projects/printf/handle_type.c
 ft_printf.h
-/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+/media/aleksandr/Диск/UNIT projects/printf/ft_printf.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/handle_width.c
+/media/aleksandr/Диск/UNIT projects/printf/handle_width.c
 
-/nfs/2016/a/abaranov/projects/ft_printf/length_of_a.c
+/media/aleksandr/Диск/UNIT projects/printf/length_of_a.c
 ft_printf.h
-/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
+/media/aleksandr/Диск/UNIT projects/printf/ft_printf.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_amount_d.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_amount_d.c
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_atoi.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_atoi.c
 libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_bzero.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_bzero.c
 libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_itoa.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_itoa.c
 libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_putchar.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_putchar.c
 libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_putchar_fd.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_putchar_fd.c
 libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_putnbr.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_putnbr.c
 libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_putnbr_fd.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_putnbr_fd.c
 libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_putstr.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_putstr.c
 libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strdup.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_strdup.c
 libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strjoin.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_strjoin.c
 libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strlen.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_strlen.c
 libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strndup.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_strndup.c
 libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strnew.c
+/media/aleksandr/Диск/UNIT projects/printf/libft/ft_strnew.c
 libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 stdlib.h
 -
 stdio.h
@@ -132,7 +132,7 @@ stdio.h
 unistd.h
 -
 
-/nfs/2016/a/abaranov/projects/ft_printf/print.c
+/media/aleksandr/Диск/UNIT projects/printf/print.c
 libft/libft.h
-/nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+/media/aleksandr/Диск/UNIT projects/printf/libft/libft.h
 

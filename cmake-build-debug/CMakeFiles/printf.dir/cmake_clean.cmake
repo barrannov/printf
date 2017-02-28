@@ -28,8 +28,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/printf.dir/print.c.o"
   "CMakeFiles/printf.dir/handle_else_gr.c.o"
   "CMakeFiles/printf.dir/handle_2_gr.c.o"
-  "printf.pdb"
-  "printf"
+  "../bin/printf.pdb"
+  "../bin/printf"
 )
 
 # Per-language clean rules from dependency scanning.

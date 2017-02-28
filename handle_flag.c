@@ -26,8 +26,6 @@ void check_override(t_var *all )
 	}
 	if(all->type != 'O' && all->type != 'o' && all->type != 'i' && all->type != 'x' && all->type != 'X')
 		all->hash = 0;
-	if(all->precision == -1)
-		all->precision = 0;
 }
 
 int check_flag(char c)
