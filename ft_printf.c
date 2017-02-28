@@ -50,9 +50,9 @@ int ft_printf(char *str, ...)
 }
 
 
-int maisn()
+int mainn()
 {
-	printf("\n%d\n",    ft_printf("@moulitest: %.d %.0d", 0, 43));
-	printf("\n%d\n",   printf("@moulitest: %.d %.0d", 0, 43));
+	printf("\n%d\n",    ft_printf("@moulitest: %s %s", "a", "b"));
+	printf("\n%d\n",   printf("@moulitest: %s %s", "a", "b"));
 	return 0;
 }

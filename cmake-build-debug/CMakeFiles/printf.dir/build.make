@@ -105,33 +105,9 @@ CMakeFiles/printf.dir/handle_per.c.o.provides: CMakeFiles/printf.dir/handle_per.
 CMakeFiles/printf.dir/handle_per.c.o.provides.build: CMakeFiles/printf.dir/handle_per.c.o
 
 
-CMakeFiles/printf.dir/libft/ft_strdup.c.o: CMakeFiles/printf.dir/flags.make
-CMakeFiles/printf.dir/libft/ft_strdup.c.o: ../libft/ft_strdup.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/aleksandr/Диск/UNIT projects/printf/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/printf.dir/libft/ft_strdup.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf.dir/libft/ft_strdup.c.o   -c "/media/aleksandr/Диск/UNIT projects/printf/libft/ft_strdup.c"
-
-CMakeFiles/printf.dir/libft/ft_strdup.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/printf.dir/libft/ft_strdup.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/media/aleksandr/Диск/UNIT projects/printf/libft/ft_strdup.c" > CMakeFiles/printf.dir/libft/ft_strdup.c.i
-
-CMakeFiles/printf.dir/libft/ft_strdup.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/printf.dir/libft/ft_strdup.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/media/aleksandr/Диск/UNIT projects/printf/libft/ft_strdup.c" -o CMakeFiles/printf.dir/libft/ft_strdup.c.s
-
-CMakeFiles/printf.dir/libft/ft_strdup.c.o.requires:
-
-.PHONY : CMakeFiles/printf.dir/libft/ft_strdup.c.o.requires
-
-CMakeFiles/printf.dir/libft/ft_strdup.c.o.provides: CMakeFiles/printf.dir/libft/ft_strdup.c.o.requires
-	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/libft/ft_strdup.c.o.provides.build
-.PHONY : CMakeFiles/printf.dir/libft/ft_strdup.c.o.provides
-
-CMakeFiles/printf.dir/libft/ft_strdup.c.o.provides.build: CMakeFiles/printf.dir/libft/ft_strdup.c.o
-
-
 CMakeFiles/printf.dir/libft/ft_strndup.c.o: CMakeFiles/printf.dir/flags.make
 CMakeFiles/printf.dir/libft/ft_strndup.c.o: ../libft/ft_strndup.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/aleksandr/Диск/UNIT projects/printf/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/printf.dir/libft/ft_strndup.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/aleksandr/Диск/UNIT projects/printf/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/printf.dir/libft/ft_strndup.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf.dir/libft/ft_strndup.c.o   -c "/media/aleksandr/Диск/UNIT projects/printf/libft/ft_strndup.c"
 
 CMakeFiles/printf.dir/libft/ft_strndup.c.i: cmake_force
@@ -151,6 +127,30 @@ CMakeFiles/printf.dir/libft/ft_strndup.c.o.provides: CMakeFiles/printf.dir/libft
 .PHONY : CMakeFiles/printf.dir/libft/ft_strndup.c.o.provides
 
 CMakeFiles/printf.dir/libft/ft_strndup.c.o.provides.build: CMakeFiles/printf.dir/libft/ft_strndup.c.o
+
+
+CMakeFiles/printf.dir/libft/ft_strdup.c.o: CMakeFiles/printf.dir/flags.make
+CMakeFiles/printf.dir/libft/ft_strdup.c.o: ../libft/ft_strdup.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/aleksandr/Диск/UNIT projects/printf/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/printf.dir/libft/ft_strdup.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/printf.dir/libft/ft_strdup.c.o   -c "/media/aleksandr/Диск/UNIT projects/printf/libft/ft_strdup.c"
+
+CMakeFiles/printf.dir/libft/ft_strdup.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/printf.dir/libft/ft_strdup.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/media/aleksandr/Диск/UNIT projects/printf/libft/ft_strdup.c" > CMakeFiles/printf.dir/libft/ft_strdup.c.i
+
+CMakeFiles/printf.dir/libft/ft_strdup.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/printf.dir/libft/ft_strdup.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/media/aleksandr/Диск/UNIT projects/printf/libft/ft_strdup.c" -o CMakeFiles/printf.dir/libft/ft_strdup.c.s
+
+CMakeFiles/printf.dir/libft/ft_strdup.c.o.requires:
+
+.PHONY : CMakeFiles/printf.dir/libft/ft_strdup.c.o.requires
+
+CMakeFiles/printf.dir/libft/ft_strdup.c.o.provides: CMakeFiles/printf.dir/libft/ft_strdup.c.o.requires
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/libft/ft_strdup.c.o.provides.build
+.PHONY : CMakeFiles/printf.dir/libft/ft_strdup.c.o.provides
+
+CMakeFiles/printf.dir/libft/ft_strdup.c.o.provides.build: CMakeFiles/printf.dir/libft/ft_strdup.c.o
 
 
 CMakeFiles/printf.dir/libft/ft_amount_d.c.o: CMakeFiles/printf.dir/flags.make
@@ -757,8 +757,8 @@ CMakeFiles/printf.dir/handle_2_gr.c.o.provides.build: CMakeFiles/printf.dir/hand
 printf_OBJECTS = \
 "CMakeFiles/printf.dir/ft_printf.c.o" \
 "CMakeFiles/printf.dir/handle_per.c.o" \
-"CMakeFiles/printf.dir/libft/ft_strdup.c.o" \
 "CMakeFiles/printf.dir/libft/ft_strndup.c.o" \
+"CMakeFiles/printf.dir/libft/ft_strdup.c.o" \
 "CMakeFiles/printf.dir/libft/ft_amount_d.c.o" \
 "CMakeFiles/printf.dir/libft/ft_itoa.c.o" \
 "CMakeFiles/printf.dir/libft/ft_strjoin.c.o" \
@@ -790,8 +790,8 @@ printf_EXTERNAL_OBJECTS =
 
 ../bin/printf: CMakeFiles/printf.dir/ft_printf.c.o
 ../bin/printf: CMakeFiles/printf.dir/handle_per.c.o
-../bin/printf: CMakeFiles/printf.dir/libft/ft_strdup.c.o
 ../bin/printf: CMakeFiles/printf.dir/libft/ft_strndup.c.o
+../bin/printf: CMakeFiles/printf.dir/libft/ft_strdup.c.o
 ../bin/printf: CMakeFiles/printf.dir/libft/ft_amount_d.c.o
 ../bin/printf: CMakeFiles/printf.dir/libft/ft_itoa.c.o
 ../bin/printf: CMakeFiles/printf.dir/libft/ft_strjoin.c.o
@@ -829,8 +829,8 @@ CMakeFiles/printf.dir/build: ../bin/printf
 
 CMakeFiles/printf.dir/requires: CMakeFiles/printf.dir/ft_printf.c.o.requires
 CMakeFiles/printf.dir/requires: CMakeFiles/printf.dir/handle_per.c.o.requires
-CMakeFiles/printf.dir/requires: CMakeFiles/printf.dir/libft/ft_strdup.c.o.requires
 CMakeFiles/printf.dir/requires: CMakeFiles/printf.dir/libft/ft_strndup.c.o.requires
+CMakeFiles/printf.dir/requires: CMakeFiles/printf.dir/libft/ft_strdup.c.o.requires
 CMakeFiles/printf.dir/requires: CMakeFiles/printf.dir/libft/ft_amount_d.c.o.requires
 CMakeFiles/printf.dir/requires: CMakeFiles/printf.dir/libft/ft_itoa.c.o.requires
 CMakeFiles/printf.dir/requires: CMakeFiles/printf.dir/libft/ft_strjoin.c.o.requires
