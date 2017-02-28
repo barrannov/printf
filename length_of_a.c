@@ -8,7 +8,7 @@ int count(uintmax_t arg, int base)
 {
 	int i;
 
-	i = 0;
+	i = (arg == 0) ? 1 : 0;
 	while (arg > 0)
 	{
 		arg /= base;
@@ -19,42 +19,47 @@ int count(uintmax_t arg, int base)
 
 int check_biggest(int a, int b, int c)
 {
-	if ((a >= b && b >= c) || (a >= c && c >= b))
+	if (a >= b && a >= c)
 		return a;
-	if ((b >= a && a >= c) || (b >= c && c >= a))
+	if (b >= a && b >= c)
 		return b;
-	if ((c >= a && a >= b) || (c >= b && b >= a))
+	if (c >= a && c >= b)
 		return c;
 	return 0;
 }
 
-int length_of_a(t_var all, uintmax_t arg, int *base)
+int length_of_a(t_var all, uintmax_t arg)
 {
 	int t;
+	char *hex;
 
+
+	hex = "0123456789abcdef";
 	t = 0;
-	if ((int) arg < 0)
-	{
-		arg = (int)-arg;
-		t++;
-	}
+
 
 	if (all.type == 's')
 		t = ((int) ft_strlen((char *) arg));
 	else if (all.type == 'p')
-		t = (count(arg, *base = 16) + 2);
+		t = (count(arg,  16) + 2);
 	else if (all.type == 'd' || all.type == 'i')
-		t += count(arg, *base = 10);
+		t += count(arg,  10);
 	else if (all.type == 'o' || all.type == 'O')
-		t = count(arg, *base = 8);
+		t = count(arg, 8);
 	else if (all.type == 'u')
-		t = count((unsigned int) arg, *base = 10);
+		t = count((unsigned long) arg, 10);
 	else if (all.type == 'U')
-		t = count((unsigned long) arg, *base = 10);
+		t = count((unsigned long) arg,10);
 	else if (all.type == 'X' || all.type == 'x')
-		t = count(arg, *base = 16);
+		t = ft_strlen(ft_itoa_base((unsigned long)arg, 16, hex));
 	else if (all.type == 'c' || all.type == 'C')
 		t = 1;
+	if(all.hash == 1 && (all.type ==  'x' || all.type ==  'X') && arg > 0) {
+		t +=2;
+	}
+	if(all.hash == 1 && (all.type ==  'o' || all.type ==  'O') ) {
+		t++;
+	}
 	//printf("len: %d        \n", t);
 	return t;
 }

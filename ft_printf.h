@@ -2,7 +2,7 @@
 #include "stdio.h"
 #include <stdarg.h>
 #include <stdlib.h>
-#include "inttypes.h"
+#include <stdint.h>
 
 
 typedef struct	s_var
@@ -18,6 +18,7 @@ typedef struct	s_var
     int size;
     char type;
 	int var;
+	int min_val;
 } t_var;
 
 
@@ -34,12 +35,24 @@ void check_override(t_var *all);
 int check_size(char c);
 int create_size(char *str, int *i);
 t_var create_flags(char *str, int *i, t_var all);
-int length_of_a(t_var all, uintmax_t temp, int *base);
-int count(unsigned long int arg, int base);
+int length_of_a(t_var all, uintmax_t temp);
 int check_biggest(int a, int b, int c);
 void *change_val_to_op(void * arg);
 
+//void handle_type(char type, uintmax_t arg);
 
+t_var handle_1gr(t_var all, va_list list);
+t_var handle_2gr(t_var all, va_list list);
+t_var handle_else_gr(t_var all, va_list arg);
+t_var handle_per(t_var all, va_list list);
 
+int count(uintmax_t arg, int base);
+t_var handle_1gr(t_var all, va_list list);
+
+intmax_t cast(int size, va_list arg, t_var *all);
 
 int isgrop1(char c);
+int isgrop2(char c);
+
+void print_w(int i);
+void print_z(int i);
