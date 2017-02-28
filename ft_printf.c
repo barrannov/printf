@@ -23,7 +23,7 @@ int ft_printf(char *str, ...)
 //			all.var++;
 //			write(1, "%", 1);
 //		}
-		if (str[i] == '%' && (size_t)(i + 1) != ft_strlen(str))
+		if (str[i] == '%')
 		{
 
 			i++;
@@ -43,16 +43,16 @@ int ft_printf(char *str, ...)
 		}
 		i++;
 	}
+
 	va_end(myl);
 	//printf("var : %d\n", all.var);
 	return all.var ;
 }
 
 
-int maikn()
+int maisn()
 {
-//	printf("\n%d\n",ft_printf("%#8x", 42));
-	printf("\n%d\n", ft_printf("%jx", 4294967295));
-	printf("\n%d\n", printf("%jx", 4294967295));
+	printf("\n%d\n",    ft_printf("@moulitest: %.d %.0d", 0, 43));
+	printf("\n%d\n",   printf("@moulitest: %.d %.0d", 0, 43));
 	return 0;
 }

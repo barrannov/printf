@@ -11,8 +11,8 @@ ft_printf.h
 /nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
 
 /nfs/2016/a/abaranov/projects/ft_printf/ft_itoa_base.c
-printf.h
-/nfs/2016/a/abaranov/projects/ft_printf/printf.h
+ft_printf.h
+/nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
 stdlib.h
 /nfs/2016/a/abaranov/projects/ft_printf/stdlib.h
 
@@ -29,8 +29,8 @@ stdarg.h
 -
 stdlib.h
 -
-inttypes.h
-/nfs/2016/a/abaranov/projects/ft_printf/inttypes.h
+stdint.h
+-
 
 /nfs/2016/a/abaranov/projects/ft_printf/go_through_struct.c
 ft_printf.h

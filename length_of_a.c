@@ -31,7 +31,10 @@ int check_biggest(int a, int b, int c)
 int length_of_a(t_var all, uintmax_t arg)
 {
 	int t;
+	char *hex;
 
+
+	hex = "0123456789abcdef";
 	t = 0;
 
 
@@ -48,14 +51,14 @@ int length_of_a(t_var all, uintmax_t arg)
 	else if (all.type == 'U')
 		t = count((unsigned long) arg,10);
 	else if (all.type == 'X' || all.type == 'x')
-		t = count((unsigned long)arg, 16);
+		t = ft_strlen(ft_itoa_base((unsigned long)arg, 16, hex));
 	else if (all.type == 'c' || all.type == 'C')
 		t = 1;
 	if(all.hash == 1 && (all.type ==  'x' || all.type ==  'X') && arg > 0) {
 		t +=2;
 	}
 	if(all.hash == 1 && (all.type ==  'o' || all.type ==  'O') ) {
-		t ++;
+		t++;
 	}
 	//printf("len: %d        \n", t);
 	return t;

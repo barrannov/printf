@@ -6,6 +6,8 @@ CMakeFiles/printf.dir/create_struct.c.o: ../ft_printf.h
 CMakeFiles/printf.dir/create_struct.c.o: ../libft/libft.h
 
 CMakeFiles/printf.dir/ft_itoa_base.c.o: ../ft_itoa_base.c
+CMakeFiles/printf.dir/ft_itoa_base.c.o: ../ft_printf.h
+CMakeFiles/printf.dir/ft_itoa_base.c.o: ../libft/libft.h
 
 CMakeFiles/printf.dir/ft_printf.c.o: ../ft_printf.c
 CMakeFiles/printf.dir/ft_printf.c.o: ../ft_printf.h

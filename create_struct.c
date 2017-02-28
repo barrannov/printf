@@ -16,7 +16,9 @@ int create_numbers(char *str, int *i)
 		temp++;
 		j++;
 	}
+	//printf("\nstr before atoi: \n %s", str);
 	width = ft_atoi(temp);
+	//printf("\nstr after atoi: \n %d", width);
 	while (*temp > 48 && *temp < 58)
 	{
 		temp++;
@@ -27,12 +29,14 @@ int create_numbers(char *str, int *i)
 }
 
 
-int check_precision(char c, char b)
+int check_precision(char c)
 {
 	if (c == '.')
 		return (1);
 	return (0);
 }
+
+
 t_var create_struct(int *i, char *str, t_var all)
 {
 /*This function adds all specification to structure*/
@@ -46,15 +50,16 @@ t_var create_struct(int *i, char *str, t_var all)
 //		all.type = '%';
 //		return all;
 //	}
- if (check_flag(str[*(i)]))
+	if (check_flag(str[*(i)]))
 		all = create_flags(str, i, all);
 	else if (is_digit(str[*i]))
 		all.width = create_numbers(str, i);
-	else if (check_precision(str[*i], str[*i + 1]))
+	else if (check_precision(str[*i]))
 	{
 		temp = 0;
-		(*i)++;
-		if(is_digit(str[*i]))
+		if (is_digit(str[*i + 1]))
+			(*i)++;
+		if (is_digit(str[*i]))
 			temp = create_numbers(str, i);
 		all.precision = temp;
 	}
@@ -62,7 +67,7 @@ t_var create_struct(int *i, char *str, t_var all)
 	{
 		all.size = (temp = create_size(str, i)) > all.size ? temp : all.size;
 	}
-	if (check_type(str[*i]))
+	else if (check_type(str[*i]))
 	{
 		all.type = str[(*i)];
 		check_override(&all);
@@ -70,4 +75,5 @@ t_var create_struct(int *i, char *str, t_var all)
 	}
 	(*i)++;
 	return create_struct(i, str, all);
+
 }
