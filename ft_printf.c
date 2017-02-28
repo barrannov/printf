@@ -49,7 +49,7 @@ int ft_printf(char *str, ...)
 }
 
 
-int main()
+int maikn()
 {
 //	printf("\n%d\n",ft_printf("%#8x", 42));
 	printf("\n%d\n", ft_printf("%jx", 4294967295));

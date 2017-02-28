@@ -2,7 +2,7 @@
 // Created by aleksandr on 11.02.17.
 //
 
-#include "printf.h"
+#include "ft_printf.h"
 #include "stdlib.h"
 
 char	*ft_itoa_base( uintmax_t value, int base, char *hex)
