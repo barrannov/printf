@@ -94,5 +94,6 @@ char			*full(char *s, int c);
 int				ft_count_l(char *s, char c);
 int				ft_count_w(const char *s, char c);
 t_list			*ft_lstnew(void const *content, size_t content_size);
+char	*ft_strndup(const char *str, int n);
 
 #endif
