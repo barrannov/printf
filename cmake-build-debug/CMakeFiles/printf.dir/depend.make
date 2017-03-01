@@ -77,6 +77,8 @@ CMakeFiles/printf.dir/libft/ft_putnbr_fd.c.o: ../libft/libft.h
 CMakeFiles/printf.dir/libft/ft_putstr.c.o: ../libft/ft_putstr.c
 CMakeFiles/printf.dir/libft/ft_putstr.c.o: ../libft/libft.h
 
+CMakeFiles/printf.dir/libft/ft_strchr.c.o: ../libft/ft_strchr.c
+
 CMakeFiles/printf.dir/libft/ft_strdup.c.o: ../libft/ft_strdup.c
 CMakeFiles/printf.dir/libft/ft_strdup.c.o: ../libft/libft.h
 
@@ -91,6 +93,8 @@ CMakeFiles/printf.dir/libft/ft_strndup.c.o: ../libft/libft.h
 
 CMakeFiles/printf.dir/libft/ft_strnew.c.o: ../libft/ft_strnew.c
 CMakeFiles/printf.dir/libft/ft_strnew.c.o: ../libft/libft.h
+
+CMakeFiles/printf.dir/main2.c.o: ../main2.c
 
 CMakeFiles/printf.dir/print.c.o: ../libft/libft.h
 CMakeFiles/printf.dir/print.c.o: ../print.c

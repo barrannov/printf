@@ -4,7 +4,7 @@
 
 int isgrop1(char c)
 {
-	if(c == 'd' || c == 'i' )
+	if(c == 'd' || c == 'i' || c == 'D')
 		return (1);
 	return (0);
 }

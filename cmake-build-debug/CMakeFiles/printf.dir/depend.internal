@@ -77,6 +77,8 @@ CMakeFiles/printf.dir/libft/ft_putnbr_fd.c.o
 CMakeFiles/printf.dir/libft/ft_putstr.c.o
  /nfs/2016/a/abaranov/projects/ft_printf/libft/ft_putstr.c
  /nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+CMakeFiles/printf.dir/libft/ft_strchr.c.o
+ /nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strchr.c
 CMakeFiles/printf.dir/libft/ft_strdup.c.o
  /nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strdup.c
  /nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
@@ -92,6 +94,8 @@ CMakeFiles/printf.dir/libft/ft_strndup.c.o
 CMakeFiles/printf.dir/libft/ft_strnew.c.o
  /nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strnew.c
  /nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
+CMakeFiles/printf.dir/main2.c.o
+ /nfs/2016/a/abaranov/projects/ft_printf/main2.c
 CMakeFiles/printf.dir/print.c.o
  /nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
  /nfs/2016/a/abaranov/projects/ft_printf/print.c

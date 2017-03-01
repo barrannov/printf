@@ -106,6 +106,8 @@ libft.h
 libft.h
 /nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
 
+/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strchr.c
+
 /nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strdup.c
 libft.h
 /nfs/2016/a/abaranov/projects/ft_printf/libft/libft.h
@@ -133,6 +135,8 @@ stdio.h
 -
 unistd.h
 -
+
+/nfs/2016/a/abaranov/projects/ft_printf/main2.c
 
 /nfs/2016/a/abaranov/projects/ft_printf/print.c
 libft/libft.h

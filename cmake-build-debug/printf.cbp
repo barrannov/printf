@@ -154,6 +154,9 @@
 		<Unit filename="/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_putstr.c">
 			<Option target="printf"/>
 		</Unit>
+		<Unit filename="/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strchr.c">
+			<Option target="printf"/>
+		</Unit>
 		<Unit filename="/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strdup.c">
 			<Option target="printf"/>
 		</Unit>
@@ -167,6 +170,9 @@
 			<Option target="printf"/>
 		</Unit>
 		<Unit filename="/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strnew.c">
+			<Option target="printf"/>
+		</Unit>
+		<Unit filename="/nfs/2016/a/abaranov/projects/ft_printf/main2.c">
 			<Option target="printf"/>
 		</Unit>
 		<Unit filename="/nfs/2016/a/abaranov/projects/ft_printf/print.c">

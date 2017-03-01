@@ -87,8 +87,8 @@ uintmax_t cast2(int size, va_list arg, t_var *all)
 	uintmax_t temp;
 	temp = va_arg(arg, uintmax_t);
 
-	if(all->type == 'U')
-		return  ((unsigned long)temp);
+	if (all->type == 'U')
+		return ((unsigned long) temp);
 	if (all->type == 'o' || all->type == 'u' || all->type == 'x' || all->type == 'X')
 	{
 		if (size == 1)
@@ -129,15 +129,20 @@ t_var handle_2gr(t_var all, va_list list)
 	//printf("\nmy: %lld", arg);
 	//return without minus
 	neweverite(&all, arg);
-	 if(all.precision == 0 && arg == 0)
-	 {
-		 len_of_num = 0;
-		 all.hash && all.type != 'x' ? len_of_num++ : 0;
-	 }
+	if (all.precision == 0 && arg == 0)
+	{
+		len_of_num = 0;
+		all.hash && all.type != 'x' ? len_of_num++ : 0;
+	}
+	else if (arg == 0 && all.type == 'c')
+	{
+			all.precision = 0;
+			len_of_num = 1;
+	}
 	else
-		 len_of_num =  length_of_a(all, arg);
-	len_of_f += check_biggest(all.width, all.precision + (all.min_val || all.plus ? 1 : 0) + all.space ,
-							  len_of_num + (all.min_val || all.plus ? 1 : 0) + all.space );
+		len_of_num = length_of_a(all, arg);
+	len_of_f += check_biggest(all.width, all.precision + (all.min_val || all.plus ? 1 : 0) + all.space,
+							  len_of_num + (all.min_val || all.plus ? 1 : 0) + all.space);
 	all.var += len_of_f;
 	all = start_output2(all, arg, len_of_num, len_of_f);
 	//printf("len of n %d\n", len_of_num);

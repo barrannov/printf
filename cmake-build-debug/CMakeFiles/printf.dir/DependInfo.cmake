@@ -27,11 +27,13 @@ set(CMAKE_DEPENDS_CHECK_C
   "/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_putnbr.c" "/nfs/2016/a/abaranov/projects/ft_printf/cmake-build-debug/CMakeFiles/printf.dir/libft/ft_putnbr.c.o"
   "/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_putnbr_fd.c" "/nfs/2016/a/abaranov/projects/ft_printf/cmake-build-debug/CMakeFiles/printf.dir/libft/ft_putnbr_fd.c.o"
   "/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_putstr.c" "/nfs/2016/a/abaranov/projects/ft_printf/cmake-build-debug/CMakeFiles/printf.dir/libft/ft_putstr.c.o"
+  "/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strchr.c" "/nfs/2016/a/abaranov/projects/ft_printf/cmake-build-debug/CMakeFiles/printf.dir/libft/ft_strchr.c.o"
   "/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strdup.c" "/nfs/2016/a/abaranov/projects/ft_printf/cmake-build-debug/CMakeFiles/printf.dir/libft/ft_strdup.c.o"
   "/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strjoin.c" "/nfs/2016/a/abaranov/projects/ft_printf/cmake-build-debug/CMakeFiles/printf.dir/libft/ft_strjoin.c.o"
   "/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strlen.c" "/nfs/2016/a/abaranov/projects/ft_printf/cmake-build-debug/CMakeFiles/printf.dir/libft/ft_strlen.c.o"
   "/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strndup.c" "/nfs/2016/a/abaranov/projects/ft_printf/cmake-build-debug/CMakeFiles/printf.dir/libft/ft_strndup.c.o"
   "/nfs/2016/a/abaranov/projects/ft_printf/libft/ft_strnew.c" "/nfs/2016/a/abaranov/projects/ft_printf/cmake-build-debug/CMakeFiles/printf.dir/libft/ft_strnew.c.o"
+  "/nfs/2016/a/abaranov/projects/ft_printf/main2.c" "/nfs/2016/a/abaranov/projects/ft_printf/cmake-build-debug/CMakeFiles/printf.dir/main2.c.o"
   "/nfs/2016/a/abaranov/projects/ft_printf/print.c" "/nfs/2016/a/abaranov/projects/ft_printf/cmake-build-debug/CMakeFiles/printf.dir/print.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

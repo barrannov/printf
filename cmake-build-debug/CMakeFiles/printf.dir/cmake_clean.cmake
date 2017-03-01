@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/printf.dir/ft_printf.c.o"
+  "CMakeFiles/printf.dir/main2.c.o"
   "CMakeFiles/printf.dir/handle_per.c.o"
+  "CMakeFiles/printf.dir/libft/ft_strchr.c.o"
   "CMakeFiles/printf.dir/libft/ft_strndup.c.o"
   "CMakeFiles/printf.dir/libft/ft_strdup.c.o"
   "CMakeFiles/printf.dir/libft/ft_amount_d.c.o"
