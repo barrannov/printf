@@ -29,8 +29,8 @@ int ft_printf(char *str, ...)
 			{
 				i++;
 				all = create_struct(&i, str, all);
-			//	if (check_type(all.type))
-					all = go_through_struct(all, myl);
+				//	if (check_type(all.type))
+				all = go_through_struct(all, myl);
 			}
 // else
 //			{
@@ -54,8 +54,9 @@ int ft_printf(char *str, ...)
 
 int main()
 {
-	printf("\n%d\n", ft_printf("%hD, %hD", 0, (unsigned short)65535));
-	printf("\n%d\n", printf("%hD, %hD", 0, USHRT_MAX));
+	char test_simple_mix[5] = "qwdg";
+	printf("\n%d\n", ft_printf("%.5p", 0));
+	printf("\n%d\n", printf("%.5p", 0));
 //	printf("\n%d\n",  printf("%5h", -9223372036854775808));
 	return 0;
 }

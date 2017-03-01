@@ -25,7 +25,8 @@ t_var handle_s(t_var all, char * arg)
 
 
 	res = ft_strnew(1);
-	if (all.precision > 0 && arg != NULL)
+
+	if (all.precision >= 0 && arg != NULL)
 		res = ft_strndup((char *) arg, all.precision);
 	else if (arg != NULL)
 		res = ft_strdup((char *) arg);

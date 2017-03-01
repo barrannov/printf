@@ -5,14 +5,12 @@
 #include "ft_printf.h"
 
 
-void start_output3(t_var all, intmax_t arg, int len_of_num, int len_of_f)
+void start_output3(t_var all, int len_of_num, int len_of_f)
 {
-	int pres;
 	int white_s;
 
 
-	pres = (all.precision > len_of_num ? (all.precision - len_of_num) : 0);
-	white_s = len_of_f - pres - (len_of_num + (all.min_val == 1 || all.plus ? 1 : all.space));
+	white_s = len_of_f- (len_of_num + (all.min_val == 1 || all.plus ? 1 : all.space));
 	//printf("pres: %d\n", white_s);
 	//printf("%d\n", len_of_num);
 	if (all.min == 0)
@@ -26,7 +24,6 @@ void start_output3(t_var all, intmax_t arg, int len_of_num, int len_of_f)
 			print_w(white_s);
 		white_s = 0;
 	}
-print_z(pres);
 
 	//if(all.precision != 0)
 	ft_putchar('%') ;
@@ -45,20 +42,14 @@ t_var handle_per(t_var all, va_list list)
 //	{
 //		//len_of_f = 1;
 //	}
-	intmax_t arg = cast(all.size, list, &all);
-	if (arg < 0)
-	{
-		arg = -arg;
-		all.min_val = 1;
 
-	}
 	//printf("\nmy: %lld", arg);
 	//return without minus
-
+	all.precision = 0;
 	len_of_f += check_biggest(all.width, all.precision ,1);
 	all.var += len_of_f;
 	//printf("len of n %d\n", len_of_num);
 	//printf("len of f %d\n", len_of_f);
-	start_output3(all, arg, 1, len_of_f);
+	start_output3(all,  1, len_of_f);
 	return all;
 }

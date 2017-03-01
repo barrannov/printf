@@ -31,11 +31,11 @@ void handle_type(char type, uintmax_t arg)
 //		arg *= 1;
 	if (type == 's')
 	{
-		ft_putstr((char *)arg);
+		ft_putstr((char *) arg);
 	}
 	else if (type == 'p')
 	{
-		ft_putstr((const char *) "0x");
+
 		ft_putstr((const char *) (ft_itoa_base(arg, 16, hex)));
 	}
 	if (type == 'd' || type == 'i')
@@ -47,16 +47,16 @@ void handle_type(char type, uintmax_t arg)
 	else if (type == 'O')
 		ft_putstr(ft_itoa_base(arg, 8, hex));
 	if (type == 'u')
-		ft_putstr(ft_itoa_base((unsigned long)arg, 10, hex));
+		ft_putstr(ft_itoa_base((unsigned long) arg, 10, hex));
 	else if (type == 'U')
-		ft_putstr(ft_itoa_base((unsigned long)arg, 10, hex));
+		ft_putstr(ft_itoa_base((unsigned long) arg, 10, hex));
 	else if (type == 'X')
 	{
 		hex = "0123456789ABCDEF";
-		ft_putstr(ft_itoa_base((unsigned long)arg, 16, hex));
+		ft_putstr(ft_itoa_base((unsigned long) arg, 16, hex));
 	}
 	else if (type == 'x')
-		ft_putstr(ft_itoa_base((unsigned long)arg, 16, hex));
-	else if ((type == 'c' || type == 'C') )
+		ft_putstr(ft_itoa_base((unsigned long) arg, 16, hex));
+	else if ((type == 'c' || type == 'C'))
 		ft_putchar(arg);
 }
