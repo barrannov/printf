@@ -79,7 +79,7 @@ void			ft_putnbr(long long n);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
-void			ft_putnbr_fd(long long n, int fd);
+void			ft_putnbr_fd(intmax_t n, int fd);
 char			*ft_strstr(const char *big, const char *lit);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));

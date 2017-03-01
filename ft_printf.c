@@ -2,6 +2,7 @@
 //
 // Created by aleksandr on 08.02.17.
 //
+#include <limits.h>
 #include "ft_printf.h"
 
 
@@ -50,9 +51,9 @@ int ft_printf(char *str, ...)
 }
 
 
-int mkain()
+int main()
 {
-	printf("\n%d\n",    ft_printf("%.2c", NULL));
-	printf("\n%d\n",   printf("%.2c", NULL));
+	printf("\n%d\n",  ft_printf("%zo, %zo", 0, ULONG_LONG_MAX));
+	printf("\n%d\n",   printf("%zo, %zo", 0, ULONG_LONG_MAX));
 	return 0;
 }

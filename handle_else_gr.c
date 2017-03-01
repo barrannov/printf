@@ -64,7 +64,6 @@ t_var handle_s(t_var all, char * arg)
 	}
 	else
 		ft_putstr(res);
-	//print_w(apc);
 	print_w(white_s);
 	return all;
 }

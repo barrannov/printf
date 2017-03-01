@@ -49,7 +49,7 @@ void handle_type(char type, uintmax_t arg)
 	if (type == 'u')
 		ft_putstr(ft_itoa_base((unsigned long)arg, 10, hex));
 	else if (type == 'U')
-		ft_putstr(ft_itoa((unsigned long) arg));
+		ft_putstr(ft_itoa_base((unsigned long)arg, 10, hex));
 	else if (type == 'X')
 	{
 		hex = "0123456789ABCDEF";
@@ -57,6 +57,6 @@ void handle_type(char type, uintmax_t arg)
 	}
 	else if (type == 'x')
 		ft_putstr(ft_itoa_base((unsigned long)arg, 16, hex));
-	else if ((type == 'c' || type == 'C') && arg != NULL)
+	else if ((type == 'c' || type == 'C') )
 		ft_putchar(arg);
 }

@@ -182,6 +182,7 @@ intmax_t cast(int size, va_list arg, t_var *all)
 {
 	intmax_t temp;
 	temp = va_arg(arg, intmax_t);
+
 	if (size == 1)
 		return (char) temp;
 	if (size == 2)

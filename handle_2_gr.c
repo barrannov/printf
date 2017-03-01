@@ -8,8 +8,8 @@ void neweverite(t_var *all, intmax_t arg)
 {
 	if (all->min_val == 1)
 		all->space = 0;
-	//if (arg == NULL)
-	//	all->precision = -1;
+	//if (arg == NULL && all->type == 'c')
+	//	all->precision = 0;
 }
 
 
@@ -74,6 +74,7 @@ t_var start_output2(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
 	}
 	print_z(pres);
 
+	//printf("%U", arg);
 	//if (all.precision != 0 && arg != 0)
 	(all.precision == 0 && arg == 0) ? 0 : handle_type(all.type, arg);
 	//print_w(apc);
