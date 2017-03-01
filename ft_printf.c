@@ -50,7 +50,7 @@ int ft_printf(char *str, ...)
 }
 
 
-int main()
+int mkain()
 {
 	printf("\n%d\n",    ft_printf("%.2c", NULL));
 	printf("\n%d\n",   printf("%.2c", NULL));
