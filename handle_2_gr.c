@@ -8,8 +8,8 @@ void neweverite(t_var *all, intmax_t arg)
 {
 	if (all->min_val == 1)
 		all->space = 0;
-	if (arg == NULL)
-		all->precision = 0;
+	//if (arg == NULL)
+	//	all->precision = -1;
 }
 
 
@@ -67,7 +67,6 @@ t_var start_output2(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
 	{
 		ft_putstr("0");
 		ft_putchar(all.type);
-
 	}
 	if (all.hash == 1 && (all.type == 'o' || all.type == 'O'))
 	{
@@ -76,7 +75,7 @@ t_var start_output2(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
 	print_z(pres);
 
 	//if (all.precision != 0 && arg != 0)
-		handle_type(all.type, arg);
+	(all.precision == 0 && arg == 0) ? 0 : handle_type(all.type, arg);
 	//print_w(apc);
 	print_w(white_s);
 	return all;
@@ -129,9 +128,15 @@ t_var handle_2gr(t_var all, va_list list)
 	//printf("\nmy: %lld", arg);
 	//return without minus
 	neweverite(&all, arg);
-	len_of_num = length_of_a(all, arg);
-	len_of_f += check_biggest(all.width, all.precision + (all.min_val || all.plus ? 1 : 0) + all.space,
-							  len_of_num + (all.min_val || all.plus ? 1 : 0) + all.space);
+	 if(all.precision == 0 && arg == 0)
+	 {
+		 len_of_num = 0;
+		 all.hash && all.type != 'x' ? len_of_num++ : 0;
+	 }
+	else
+		 len_of_num =  length_of_a(all, arg);
+	len_of_f += check_biggest(all.width, all.precision + (all.min_val || all.plus ? 1 : 0) + all.space ,
+							  len_of_num + (all.min_val || all.plus ? 1 : 0) + all.space );
 	all.var += len_of_f;
 	all = start_output2(all, arg, len_of_num, len_of_f);
 	//printf("len of n %d\n", len_of_num);

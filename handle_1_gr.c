@@ -46,8 +46,7 @@ void start_output(t_var all, intmax_t arg, int len_of_num, int len_of_f)
 	all.min_val == 1 ? ft_putchar('-') : 0;
 	print_z(pres);
 
-	//if(all.precision != 0)
-		ft_putnbr(arg) ;
+	(all.precision == 0 && arg == 0) ? 0 : ft_putnbr(arg);
 	//print_w(apc);
 	print_w(white_s);
 }
@@ -75,7 +74,7 @@ t_var handle_1gr(t_var all, va_list list)
 	//printf("\nmy: %lld", arg);
 	//return without minus
 	neweverite1(&all, arg);
-	len_of_num += count(arg, 10);
+	len_of_num += (all.precision == 0 && arg == 0) ? 0 : count(arg, 10);
 	len_of_f += check_biggest(all.width, all.precision  + (all.min_val || all.plus ? 1 : 0) + all.space,
 							  len_of_num + (all.min_val || all.plus ? 1 : 0) + all.space);
 	all.var += len_of_f;
