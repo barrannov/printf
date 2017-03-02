@@ -74,11 +74,11 @@ t_var start_output2(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
 	{
 		ft_putstr("0");
 	}
+	all.type == 'p' ? ft_putstr((const char *) "0x") : 0;
 	print_z(pres);
 
 	//printf("%U", arg);
 	//if (all.precision != 0 && arg != 0)
-	all.type == 'p' ? ft_putstr((const char *) "0x") : 0;
  	(all.precision == 0 && arg == 0 && all.type != 'c') ? 0 : handle_type(all.type, arg);
 	//print_w(apc);
 	print_w(white_s);

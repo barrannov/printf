@@ -38,6 +38,7 @@ t_var create_flags(char *str, int *i, t_var all);
 int length_of_a(t_var all, uintmax_t temp);
 int check_biggest(int a, int b, int c);
 void *change_val_to_op(void * arg);
+t_var handle_p(t_var all, va_list list);
 
 //void handle_type(char type, uintmax_t arg);
 

@@ -52,11 +52,11 @@ int ft_printf(char *str, ...)
 }
 
 
-int main()
+int makin()
 {
 	char test_simple_mix[5] = "qwdg";
-	printf("\n%d\n", ft_printf("%.5p", 0));
-	printf("\n%d\n", printf("%.5p", 0));
+	printf("\n%d\n", ft_printf("{%5p}", 0));
+	printf("\n%d\n", printf("{%5p}", 0));
 //	printf("\n%d\n",  printf("%5h", -9223372036854775808));
 	return 0;
 }

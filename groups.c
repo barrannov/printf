@@ -12,7 +12,7 @@ int isgrop1(char c)
 int isgrop2(char c)
 {
 	if(
-			c == 'p' ||
+		//	c == 'p' ||
 			c == 'o' ||
 			c == 'O' ||
 			c == 'u' ||

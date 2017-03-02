@@ -30,6 +30,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/printf.dir/print.c.o"
   "CMakeFiles/printf.dir/handle_else_gr.c.o"
   "CMakeFiles/printf.dir/handle_2_gr.c.o"
+  "CMakeFiles/printf.dir/handle_p.c.o"
   "printf.pdb"
   "printf"
 )

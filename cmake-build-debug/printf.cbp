@@ -112,6 +112,9 @@
 		<Unit filename="/nfs/2016/a/abaranov/projects/ft_printf/handle_flag.c">
 			<Option target="printf"/>
 		</Unit>
+		<Unit filename="/nfs/2016/a/abaranov/projects/ft_printf/handle_p.c">
+			<Option target="printf"/>
+		</Unit>
 		<Unit filename="/nfs/2016/a/abaranov/projects/ft_printf/handle_per.c">
 			<Option target="printf"/>
 		</Unit>

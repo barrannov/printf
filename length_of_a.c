@@ -41,7 +41,7 @@ int length_of_a(t_var all, uintmax_t arg)
 	if (all.type == 's')
 		t = ((int) ft_strlen((char *) arg));
 	else if (all.type == 'p')
-		t = (count(arg,  16) + 2);
+		t = ((arg != 0 ? count(arg,  16)  : 0));
 	else if (all.type == 'd' || all.type == 'i')
 		t += count(arg,  10);
 	else if (all.type == 'o')

@@ -35,6 +35,10 @@ CMakeFiles/printf.dir/handle_flag.c.o: ../ft_printf.h
 CMakeFiles/printf.dir/handle_flag.c.o: ../handle_flag.c
 CMakeFiles/printf.dir/handle_flag.c.o: ../libft/libft.h
 
+CMakeFiles/printf.dir/handle_p.c.o: ../ft_printf.h
+CMakeFiles/printf.dir/handle_p.c.o: ../handle_p.c
+CMakeFiles/printf.dir/handle_p.c.o: ../libft/libft.h
+
 CMakeFiles/printf.dir/handle_per.c.o: ../ft_printf.h
 CMakeFiles/printf.dir/handle_per.c.o: ../handle_per.c
 CMakeFiles/printf.dir/handle_per.c.o: ../libft/libft.h

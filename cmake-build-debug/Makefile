@@ -366,6 +366,33 @@ handle_flag.c.s:
 	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/handle_flag.c.s
 .PHONY : handle_flag.c.s
 
+handle_p.o: handle_p.c.o
+
+.PHONY : handle_p.o
+
+# target to build an object file
+handle_p.c.o:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/handle_p.c.o
+.PHONY : handle_p.c.o
+
+handle_p.i: handle_p.c.i
+
+.PHONY : handle_p.i
+
+# target to preprocess a source file
+handle_p.c.i:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/handle_p.c.i
+.PHONY : handle_p.c.i
+
+handle_p.s: handle_p.c.s
+
+.PHONY : handle_p.s
+
+# target to generate assembly for a file
+handle_p.c.s:
+	$(MAKE) -f CMakeFiles/printf.dir/build.make CMakeFiles/printf.dir/handle_p.c.s
+.PHONY : handle_p.c.s
+
 handle_per.o: handle_per.c.o
 
 .PHONY : handle_per.o
@@ -996,6 +1023,9 @@ help:
 	@echo "... handle_flag.o"
 	@echo "... handle_flag.i"
 	@echo "... handle_flag.s"
+	@echo "... handle_p.o"
+	@echo "... handle_p.i"
+	@echo "... handle_p.s"
 	@echo "... handle_per.o"
 	@echo "... handle_per.i"
 	@echo "... handle_per.s"
