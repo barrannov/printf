@@ -139,6 +139,8 @@ unistd.h
 -
 
 /nfs/2016/a/abaranov/projects/ft_printf/main2.c
+stdio.h
+-
 
 /nfs/2016/a/abaranov/projects/ft_printf/print.c
 libft/libft.h
