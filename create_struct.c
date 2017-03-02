@@ -51,8 +51,6 @@ t_var create_struct(int *i, char *str, t_var all)
 //		return all;
 //	}
 
-//	if(!ft_strchr("0123456789+. -#lLhzj", str[*i]))
-//		return all;
 	if (check_flag(str[*(i)]))
 		all = create_flags(str, i, all);
 	else if (is_digit(str[*i]))
@@ -76,6 +74,11 @@ t_var create_struct(int *i, char *str, t_var all)
 		check_override(&all);
 		return (all);
 	}
+	if (!ft_strchr("0123456789+. -#lLhzj", str[*i]))
+	{
+		all.type = '$';
+		return all;
+}
 	(*i)++;
 	return create_struct(i, str, all);
 

@@ -24,6 +24,8 @@ t_var start_outputp(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
 	white_s = len_of_f - pres - len_of_num - 2;
 //	printf("pres: %d\n", white_s);
 	//printf("%d\n", len_of_num);
+	if(all.width > 0 && all.precision == -1 && arg == 0)
+		white_s--;
 	if (all.min == 0)
 	{
 		if (all.null == 1)

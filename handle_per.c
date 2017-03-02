@@ -5,7 +5,7 @@
 #include "ft_printf.h"
 
 
-void start_output3(t_var all, int len_of_num, int len_of_f)
+t_var start_output3(t_var all, int len_of_num, int len_of_f)
 {
 	int white_s;
 
@@ -25,10 +25,13 @@ void start_output3(t_var all, int len_of_num, int len_of_f)
 		white_s = 0;
 	}
 
-	//if(all.precision != 0)
-	ft_putchar('%') ;
+	if(all.type == '%')
+		ft_putchar('%') ;
+	else
+		all.var--;
 	//print_w(apc);
 	print_w(white_s);
+	return all;
 }
 
 
@@ -50,6 +53,6 @@ t_var handle_per(t_var all, va_list list)
 	all.var += len_of_f;
 	//printf("len of n %d\n", len_of_num);
 	//printf("len of f %d\n", len_of_f);
-	start_output3(all,  1, len_of_f);
+	all = start_output3(all,  1, len_of_f);
 	return all;
 }
