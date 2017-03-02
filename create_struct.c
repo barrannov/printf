@@ -55,7 +55,10 @@ t_var		create_struct(int *i, char *str, t_var all)
 		is_digit(str[*i]) ? all.precision = create_numbers(str, i) : 0;
 	}
 	else if (check_size(str[*i]))
-		(all.t = create_size(str, i)) > all.size ? all.size = all.t : 0;
+	{
+		all.t = create_size(str, i);
+		all.t > all.size ? all.size = all.t : 0;
+	}
 	else if (check_type(str[*i]))
 	{
 		all.type = str[(*i)];
@@ -63,7 +66,7 @@ t_var		create_struct(int *i, char *str, t_var all)
 		return (all);
 	}
 	else
-		return all;
+		return (all);
 	(*i)++;
-	return create_struct(i, str, all);
+	return (create_struct(i, str, all));
 }

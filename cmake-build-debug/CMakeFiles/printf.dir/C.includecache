@@ -13,8 +13,6 @@ ft_printf.h
 /nfs/2016/a/abaranov/projects/ft_printf/ft_itoa_base.c
 ft_printf.h
 /nfs/2016/a/abaranov/projects/ft_printf/ft_printf.h
-stdlib.h
-/nfs/2016/a/abaranov/projects/ft_printf/stdlib.h
 
 /nfs/2016/a/abaranov/projects/ft_printf/ft_printf.c
 limits.h

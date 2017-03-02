@@ -1,18 +1,25 @@
-//
-// Created by Aleksandr Baranov on 2/21/17.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   groups.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abaranov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/03/02 21:41:36 by abaranov          #+#    #+#             */
+/*   Updated: 2017/03/02 21:41:37 by abaranov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int isgrop1(char c)
+int		isgrop1(char c)
 {
-	if(c == 'd' || c == 'i' || c == 'D')
+	if (c == 'd' || c == 'i' || c == 'D')
 		return (1);
 	return (0);
 }
 
-int isgrop2(char c)
+int		isgrop2(char c)
 {
-	if(
-		//	c == 'p' ||
+	if (
 			c == 'o' ||
 			c == 'O' ||
 			c == 'u' ||
@@ -24,4 +31,3 @@ int isgrop2(char c)
 		return (1);
 	return (0);
 }
-
