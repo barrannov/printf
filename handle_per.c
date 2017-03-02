@@ -11,14 +11,12 @@ t_var start_output3(t_var all, int len_of_num, int len_of_f)
 
 
 	white_s = len_of_f- (len_of_num + (all.min_val == 1 || all.plus ? 1 : all.space));
-	//printf("pres: %d\n", white_s);
 	//printf("%d\n", len_of_num);
 	if (all.min == 0)
 	{
 		if (all.null == 1)
 		{
-			print_z(white_s + (all.min_val == 1 ? 0 : all.plus));
-			all.plus = 0;
+			print_z(white_s);
 		}
 		else
 			print_w(white_s);
@@ -45,6 +43,7 @@ t_var handle_per(t_var all, va_list list)
 //	{
 //		//len_of_f = 1;
 //	}
+
 
 	//printf("\nmy: %lld", arg);
 	//return without minus

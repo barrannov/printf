@@ -56,8 +56,8 @@ int ft_printf(char *str, ...)
 int maijn()
 {
 	char test_simple_mix[5] = "qwdg";
-	printf("\n%d\n", ft_printf("{%05.s}", 0));
-	printf("\n%d\n", printf("{%05.s}", 0));
+	printf("\n%d\n", ft_printf("{%#.5x}", 1));
+	printf("\n%d\n", printf("{%#.5x}", 1));
 //	printf("\n%d\n",  printf("%5h", -9223372036854775808));
 	return 0;
 }

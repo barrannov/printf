@@ -31,6 +31,8 @@ t_var handle_s(t_var all, char * arg)
 	else if (arg != NULL)
 		res = ft_strdup((char *) arg);
 
+
+
 	if (arg != NULL)
 		str_len = (int) ft_strlen(res);
 	else
@@ -58,12 +60,12 @@ t_var handle_s(t_var all, char * arg)
 
 	//if(all.precision != 0)
 
-	if (arg == NULL)
-	{
-		ft_putstr("(null)");
-		//all.var += 6;
-	}
-	else
+//	if (arg == NULL)
+//	{
+//		ft_putstr("(null)");
+//		//all.var += 6;
+//	}
+
 		ft_putstr(res);
 	print_w(white_s);
 	return all;
@@ -77,6 +79,8 @@ t_var handle_else_gr(t_var all, va_list arg)
 
 	temp = va_arg(arg, uintmax_t);
 
+	if(temp == 0)
+		temp = (uintmax_t)"(null)";
 	if (all.type == 's')
 		all = handle_s(all, (char *)temp);
 	//all.var += length_of_a(all, temp);

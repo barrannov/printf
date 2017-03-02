@@ -26,8 +26,9 @@ t_var start_output2(t_var all, uintmax_t arg, int len_of_num, int len_of_f)
 
 //	arg == NULL ? len_of_f-- : 0;
 	pres = (all.precision > len_of_num ? (all.precision - len_of_num) : 0);
+	(all.type == 'x' && all.hash == 1 && all.precision > 0 ?  pres += 2 , all.var+= 2 : 0);
 	white_s = len_of_f - pres - (len_of_num + (all.min_val == 1 || all.plus ? 1 : all.space));
-	//printf("pres: %d\n", white_s);
+	//printf("pres: %d\n", len_of_num);
 	//printf("%d\n", len_of_num);
 	if (all.min == 0)
 	{
