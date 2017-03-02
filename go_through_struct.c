@@ -3,7 +3,6 @@
 /*This func obtain every node to the account function*/
 void free_struct(t_var *strc)
 {
-	strc->parameter = (char) NULL;
 	strc->hash = 0;
 	strc->min = 0;
 	strc->null = 0;
@@ -13,6 +12,7 @@ void free_struct(t_var *strc)
 	strc->size = 0;
 	strc->plus = 0;
 	strc->min_val = 0;
+	strc->t = 0;
 	strc->type = (char) NULL;
 }
 
@@ -209,12 +209,12 @@ t_var go_through_struct(t_var all, va_list arg)
 		all = handle_1gr(all, arg);
 	else if (isgrop2(all.type))
 		all = handle_2gr(all, arg);
-	else if (all.type == '%' || all.type == '$')
-		all = handle_per(all, arg);
 	else if (all.type == 'p')
 		all = handle_p(all, arg);
-	else
+	else if(all.type == 's')
 		all = handle_else_gr(all, arg);
+	else
+		all = handle_per(all, arg);
 
 
 

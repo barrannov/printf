@@ -7,7 +7,6 @@
 
 typedef struct	s_var
 {
-    char parameter;
     int null;
 	int hash;
 	int min;
@@ -19,6 +18,7 @@ typedef struct	s_var
     char type;
 	int var;
 	int min_val;
+	int t;//temp
 } t_var;
 
 

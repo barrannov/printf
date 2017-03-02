@@ -23,7 +23,7 @@ int ft_printf(char *str, ...)
 //			all.var++;
 //			write(1, "%", 1);
 //		}
-		if (str[i] == '%')
+			if (str[i] == '%')
 		{
 			if (str[i + 1])
 			{
@@ -53,11 +53,11 @@ int ft_printf(char *str, ...)
 }
 
 
-int maijn()
+int pmain()
 {
 	char test_simple_mix[5] = "qwdg";
-	printf("\n%d\n", ft_printf("{%#.5x}", 1));
-	printf("\n%d\n", printf("{%#.5x}", 1));
+	printf("\n%d\n", ft_printf("{%}"));
+	printf("\n%d\n",   printf("{%}"));
 //	printf("\n%d\n",  printf("%5h", -9223372036854775808));
 	return 0;
 }
