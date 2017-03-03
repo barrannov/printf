@@ -6,7 +6,7 @@
 /*   By: abaranov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:59:38 by abaranov          #+#    #+#             */
-/*   Updated: 2016/12/14 13:39:38 by abaranov         ###   ########.fr       */
+/*   Updated: 2017/03/03 17:49:02 by abaranov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,6 @@ char			*full(char *s, int c);
 int				ft_count_l(char *s, char c);
 int				ft_count_w(const char *s, char c);
 t_list			*ft_lstnew(void const *content, size_t content_size);
-char	*ft_strndup(const char *str, int n);
+char			*ft_strndup(const char *str, int n);
 
 #endif

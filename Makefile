@@ -10,7 +10,6 @@ SRC =   ft_printf.c \
 		handle_flag.c \
 		handle_size.c \
 		handle_type.c \
-		handle_width.c \
 		length_of_a.c \
 		ft_itoa_base.c \
 		print.c \

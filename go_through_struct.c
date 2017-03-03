@@ -19,7 +19,7 @@ void			free_struct(t_var *strc)
 	strc->null = 0;
 	strc->space = 0;
 	strc->width = 0;
-	strc->precision = -1;
+	strc->prec = -1;
 	strc->size = 0;
 	strc->plus = 0;
 	strc->min_val = 0;
@@ -54,6 +54,6 @@ t_var			go_through_struct(t_var all, va_list arg)
 	else if (all.type == 's')
 		all = handle_else_gr(all, arg);
 	else
-		all = handle_per(all, arg);
+		all = handle_per(all);
 	return (all);
 }

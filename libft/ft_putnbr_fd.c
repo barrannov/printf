@@ -6,7 +6,7 @@
 /*   By: abaranov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 15:26:34 by abaranov          #+#    #+#             */
-/*   Updated: 2016/12/12 14:02:12 by abaranov         ###   ########.fr       */
+/*   Updated: 2017/03/03 17:50:07 by abaranov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_putnbr_fd(intmax_t n, int fd)
 {
-	if(n == -9223372036854775807 - 1)
+	if (n == -9223372036854775807 - 1)
 	{
 		ft_putnbr_fd(9223372036, fd);
 		ft_putnbr_fd(854775808, fd);
-		return;
+		return ;
 	}
 	if (n < 0)
 	{
@@ -34,7 +34,6 @@ void	ft_putnbr_fd(intmax_t n, int fd)
 	if (n > 9)
 	{
 		ft_putnbr_fd(n / 10, fd);
-		//printf("arg: %d", n);
 		ft_putchar_fd((char)(n % 10) + 48, fd);
 	}
 	else

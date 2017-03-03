@@ -50,9 +50,9 @@ t_var		create_struct(int *i, char *str, t_var all)
 		all.width = create_numbers(str, i);
 	else if (check_precision(str[*i]))
 	{
-		all.precision = 0;
+		all.prec = 0;
 		is_digit(str[*i + 1]) ? (*i)++ : 0;
-		is_digit(str[*i]) ? all.precision = create_numbers(str, i) : 0;
+		is_digit(str[*i]) ? all.prec = create_numbers(str, i) : 0;
 	}
 	else if (check_size(str[*i]))
 	{

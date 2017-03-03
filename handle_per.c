@@ -1,16 +1,22 @@
-//
-// Created by Aleksandr Baranov on 2/27/17.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_per.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abaranov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/03/03 17:04:36 by abaranov          #+#    #+#             */
+/*   Updated: 2017/03/03 17:04:39 by abaranov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
-
-t_var start_output3(t_var all, int len_of_num, int len_of_f)
+t_var		start_output3(t_var all, int len_of_num, int len_of_f)
 {
 	int white_s;
 
-
-	white_s = len_of_f - (len_of_num + (all.min_val == 1 || all.plus ? 1 : all.space));
+	white_s = len_of_f - (len_of_num + all.space);
 	if (all.min == 0)
 	{
 		if (all.null == 1)
@@ -21,25 +27,22 @@ t_var start_output3(t_var all, int len_of_num, int len_of_f)
 			print_w(white_s);
 		white_s = 0;
 	}
-
 	if (all.type == '%')
 		ft_putchar('%');
 	else
 		all.var--;
 	print_w(white_s);
-	return all;
+	return (all);
 }
 
-
-t_var handle_per(t_var all, va_list list)
+t_var		handle_per(t_var all)
 {
-	//Длина всего выводимого поля
 	int len_of_f;
 
 	len_of_f = 0;
-	all.precision = 0;
-	len_of_f += check_biggest(all.width, all.precision, 1);
+	all.prec = 0;
+	len_of_f += check_biggest(all.width, all.prec, 1);
 	all.var += len_of_f;
 	all = start_output3(all, 1, len_of_f);
-	return all;
+	return (all);
 }

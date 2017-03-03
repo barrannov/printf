@@ -39,7 +39,7 @@ void		start_output(t_var all, intmax_t arg, int len_of_num, int len_of_f)
 	int		pres;
 	int		white_s;
 
-	pres = (all.precision > len_of_num ? (all.precision - len_of_num) : 0);
+	pres = (all.prec > len_of_num ? (all.prec - len_of_num) : 0);
 	white_s = len_of_f - pres - (len_of_num + (all.min_val == 1
 				|| all.plus ? 1 : all.space));
 	if (all.min == 0)
@@ -54,7 +54,7 @@ void		start_output(t_var all, intmax_t arg, int len_of_num, int len_of_f)
 	all.plus == 1 && all.min_val == 0 ? ft_putchar('+') : 0;
 	all.min_val == 1 ? ft_putchar('-') : 0;
 	print_z(pres);
-	(all.precision == 0 && arg == 0) ? 0 : ft_putnbr(arg);
+	(all.prec == 0 && arg == 0) ? 0 : ft_putnbr(arg);
 	print_w(white_s);
 }
 
@@ -73,9 +73,9 @@ t_var		handle_1gr(t_var all, va_list list)
 		all.min_val = 1;
 	}
 	neweverite1(&all);
-	len_of_num += (all.precision == 0 && arg == 0) ? 0 : count(arg, 10);
+	len_of_num += (all.prec == 0 && arg == 0) ? 0 : count(arg, 10);
 	len_of_f += check_biggest(all.width,
-		all.precision +
+		all.prec +
 		(all.min_val ||
 		all.plus ? 1 : 0) + all.space,
 		len_of_num + (all.min_val || all.plus ? 1 : 0) + all.space);

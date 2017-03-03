@@ -1,21 +1,29 @@
-//
-// Created by Aleksandr Baranov on 2/22/17.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abaranov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/03/03 16:30:02 by abaranov          #+#    #+#             */
+/*   Updated: 2017/03/03 16:30:18 by abaranov         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft/libft.h"
 
-void print_w(int i)
+void	print_w(int i)
 {
-	while(i > 0)
+	while (i > 0)
 	{
 		ft_putchar(' ');
 		i--;
 	}
 }
 
-void print_z(int i)
+void	print_z(int i)
 {
-	while(i > 0)
+	while (i > 0)
 	{
 		ft_putchar('0');
 		i--;
