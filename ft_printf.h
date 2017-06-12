@@ -35,6 +35,7 @@ typedef struct	s_var
 	int			t;
 }				t_var;
 
+int				ft_printf(char *str, ...);
 char			*ft_itoa_base(uintmax_t value, int base, char *hex);
 t_var			create_struct(int *i, char *str, t_var all);
 t_var			go_through_struct(t_var all, va_list arg);
